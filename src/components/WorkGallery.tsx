@@ -29,13 +29,13 @@ export function WorkGallery({ items, layout, filters = false }: Props) {
         </div>
       )}
 
-      <div className={layout === "scatter" ? "works__list" : "grid-2"}>
+      <div className={layout === "scatter" ? "works__grid" : "grid-2"}>
         {shown.map((p, i) => (
           <Reveal
             key={`${active}-${p.slug}`}
             variant="scale"
             delay={layout === "grid" ? (i % 2) * 90 : 0}
-            className={`work ${layout === "scatter" ? `work--${i + 1}` : ""}`}
+            className="work"
           >
             <Link className="work__hit" href={`/projects/${p.slug}`} data-cursor="View">
               <div className="work__media">
@@ -47,7 +47,10 @@ export function WorkGallery({ items, layout, filters = false }: Props) {
                 />
               </div>
               <div className="work__meta">
-                <h3 className="work__title">{p.title}</h3>
+                <h3 className="work__title">
+                  {layout === "scatter" && <span className="work__num">{String(i + 1).padStart(2, "0")}</span>}
+                  {p.title}
+                </h3>
                 <span className="work__tags">
                   {p.tags.map((t) => (
                     <span key={t}>{t}</span>

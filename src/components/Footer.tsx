@@ -24,7 +24,6 @@ export function Footer() {
         </ul>
         <BackToTop />
       </div>
-      <div className="footer__word" aria-hidden="true">{site.name}</div>
     </footer>
   );
 }

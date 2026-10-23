@@ -10,7 +10,106 @@ import ultraRapide from "@/assets/images/ultra-rapid.jpg";
 import twsel from "@/assets/images/twsel.jpg";
 import innovea from "@/assets/images/innovea.jpg";
 import servicePackaging from "@/assets/images/service-packaging.jpg";
-import serviceWeb from "@/assets/images/service-web.jpg";
+import w_banner_beko_dishwasher from "@/assets/images/work/banner-beko-dishwasher.jpg";
+import w_banner_beko_leaderboard from "@/assets/images/work/banner-beko-leaderboard.jpg";
+import w_banner_telecoming_1 from "@/assets/images/work/banner-telecoming-1.jpg";
+import w_banner_telecoming_2 from "@/assets/images/work/banner-telecoming-2.jpg";
+import w_banner_telecoming_3 from "@/assets/images/work/banner-telecoming-3.jpg";
+import w_logo_01 from "@/assets/images/work/logo-01.png";
+import w_logo_02 from "@/assets/images/work/logo-02.png";
+import w_logo_03 from "@/assets/images/work/logo-03.png";
+import w_logo_04 from "@/assets/images/work/logo-04.png";
+import w_logo_05 from "@/assets/images/work/logo-05.png";
+import w_logo_06 from "@/assets/images/work/logo-06.png";
+import w_logo_07 from "@/assets/images/work/logo-07.png";
+import w_logo_08 from "@/assets/images/work/logo-08.png";
+import w_logo_09 from "@/assets/images/work/logo-09.png";
+import w_logo_10 from "@/assets/images/work/logo-10.png";
+import w_logo_11 from "@/assets/images/work/logo-11.png";
+import w_logo_12 from "@/assets/images/work/logo-12.png";
+import w_logo_13 from "@/assets/images/work/logo-13.png";
+import w_logo_14 from "@/assets/images/work/logo-14.png";
+import w_logo_15 from "@/assets/images/work/logo-15.png";
+import w_logo_16 from "@/assets/images/work/logo-16.png";
+import w_logo_17 from "@/assets/images/work/logo-17.png";
+import w_logo_18 from "@/assets/images/work/logo-18.png";
+import w_logo_19 from "@/assets/images/work/logo-19.png";
+import w_logo_20 from "@/assets/images/work/logo-20.png";
+import w_logo_21 from "@/assets/images/work/logo-21.png";
+import w_medal_1 from "@/assets/images/work/medal-1.jpg";
+import w_medal_2 from "@/assets/images/work/medal-2.jpg";
+import w_medal_3 from "@/assets/images/work/medal-3.jpg";
+import w_medal_4 from "@/assets/images/work/medal-4.jpg";
+import w_medal_5 from "@/assets/images/work/medal-5.jpg";
+import w_medal_6 from "@/assets/images/work/medal-6.jpg";
+import w_medal_7 from "@/assets/images/work/medal-7.jpg";
+import w_pack_doubby_dielines from "@/assets/images/work/pack-doubby-dielines.jpg";
+import w_pack_doubby_mockup from "@/assets/images/work/pack-doubby-mockup.jpg";
+import w_pack_honey_jar from "@/assets/images/work/pack-honey-jar.jpg";
+import w_pack_honey_label from "@/assets/images/work/pack-honey-label.jpg";
+import w_pack_infinix_box from "@/assets/images/work/pack-infinix-box.jpg";
+import w_pack_infinix_dieline from "@/assets/images/work/pack-infinix-dieline.jpg";
+import w_pack_latrasse_dieline from "@/assets/images/work/pack-latrasse-dieline.jpg";
+import w_pack_rivano_buckets from "@/assets/images/work/pack-rivano-buckets.jpg";
+import w_pack_rivano_label from "@/assets/images/work/pack-rivano-label.jpg";
+import w_pack_rivano_pails from "@/assets/images/work/pack-rivano-pails.jpg";
+import w_post_01 from "@/assets/images/work/post-01.jpg";
+import w_post_02 from "@/assets/images/work/post-02.jpg";
+import w_post_03 from "@/assets/images/work/post-03.jpg";
+import w_post_04 from "@/assets/images/work/post-04.jpg";
+import w_post_05 from "@/assets/images/work/post-05.jpg";
+import w_post_06 from "@/assets/images/work/post-06.jpg";
+import w_post_07 from "@/assets/images/work/post-07.jpg";
+import w_post_08 from "@/assets/images/work/post-08.jpg";
+import w_post_09 from "@/assets/images/work/post-09.jpg";
+import w_post_10 from "@/assets/images/work/post-10.jpg";
+import w_post_11 from "@/assets/images/work/post-11.jpg";
+import w_post_12 from "@/assets/images/work/post-12.jpg";
+import w_post_13 from "@/assets/images/work/post-13.jpg";
+import w_post_14 from "@/assets/images/work/post-14.jpg";
+import w_post_15 from "@/assets/images/work/post-15.jpg";
+import w_post_16 from "@/assets/images/work/post-16.jpg";
+import w_post_17 from "@/assets/images/work/post-17.jpg";
+import w_post_18 from "@/assets/images/work/post-18.jpg";
+import w_post_19 from "@/assets/images/work/post-19.jpg";
+import w_post_20 from "@/assets/images/work/post-20.jpg";
+import w_post_21 from "@/assets/images/work/post-21.jpg";
+import w_post_22 from "@/assets/images/work/post-22.jpg";
+import w_post_23 from "@/assets/images/work/post-23.jpg";
+import w_post_24 from "@/assets/images/work/post-24.jpg";
+import w_post_25 from "@/assets/images/work/post-25.jpg";
+import w_poster_car_01 from "@/assets/images/work/poster-car-01.jpg";
+import w_poster_car_02 from "@/assets/images/work/poster-car-02.jpg";
+import w_poster_car_03 from "@/assets/images/work/poster-car-03.jpg";
+import w_poster_car_04 from "@/assets/images/work/poster-car-04.jpg";
+import w_poster_car_05 from "@/assets/images/work/poster-car-05.jpg";
+import w_poster_car_06 from "@/assets/images/work/poster-car-06.jpg";
+import w_poster_car_07 from "@/assets/images/work/poster-car-07.jpg";
+import w_poster_car_08 from "@/assets/images/work/poster-car-08.jpg";
+import w_poster_car_09 from "@/assets/images/work/poster-car-09.jpg";
+import w_poster_car_10 from "@/assets/images/work/poster-car-10.jpg";
+import w_poster_space_01 from "@/assets/images/work/poster-space-01.jpg";
+import w_poster_space_02 from "@/assets/images/work/poster-space-02.jpg";
+import w_poster_space_03 from "@/assets/images/work/poster-space-03.jpg";
+import w_poster_space_04 from "@/assets/images/work/poster-space-04.jpg";
+import w_poster_space_05 from "@/assets/images/work/poster-space-05.jpg";
+import w_poster_space_06 from "@/assets/images/work/poster-space-06.jpg";
+import w_poster_space_07 from "@/assets/images/work/poster-space-07.jpg";
+import w_poster_space_08 from "@/assets/images/work/poster-space-08.jpg";
+import w_poster_space_09 from "@/assets/images/work/poster-space-09.jpg";
+import w_poster_space_10 from "@/assets/images/work/poster-space-10.jpg";
+import w_poster_space_11 from "@/assets/images/work/poster-space-11.jpg";
+import w_print_alaksa_halwa from "@/assets/images/work/print-alaksa-halwa.jpg";
+import w_print_alaksa_tartilla from "@/assets/images/work/print-alaksa-tartilla.jpg";
+import w_print_netto_banner from "@/assets/images/work/print-netto-banner.jpg";
+import w_print_netto_magic from "@/assets/images/work/print-netto-magic.jpg";
+import w_print_netto_star from "@/assets/images/work/print-netto-star.jpg";
+import buzzDesktop from "@/assets/images/web/buzz-desktop.jpg";
+import ibDesktop from "@/assets/images/web/ib-digital-desktop.jpg";
+import ibMobile from "@/assets/images/web/ib-digital-mobile.jpg";
+import kbDesktop from "@/assets/images/web/karin-bastin-desktop.jpg";
+import kbMobile from "@/assets/images/web/karin-bastin-mobile.jpg";
+import amsDesktop from "@/assets/images/web/ams-desktop.jpg";
 import nihad from "@/assets/images/testimonial-nihad.jpg";
 import artStandard from "@/assets/images/article-standard.jpg";
 import artFraenk from "@/assets/images/article-fraenk.jpg";
@@ -68,43 +167,21 @@ import inoLaptop from "@/assets/images/projects/innovea/laptop.jpg";
 import inoSignage from "@/assets/images/projects/innovea/signage.jpg";
 import inoGuidelines from "@/assets/images/projects/innovea/guidelines.jpg";
 import afGuidelines from "@/assets/images/projects/adem-fitt/guidelines.jpg";
-import arBoard from "@/assets/images/projects/ariadne/board.jpg";
+import arBoard from "@/assets/images/projects/ariadne/cover.jpg";
 import ar1 from "@/assets/images/projects/ariadne/page-1.jpg";
 import ar2 from "@/assets/images/projects/ariadne/page-2.jpg";
 import ar3 from "@/assets/images/projects/ariadne/page-3.jpg";
 import ar4 from "@/assets/images/projects/ariadne/page-4.jpg";
-import hbBoard from "@/assets/images/projects/hiba-co/board.jpg";
+import hbBoard from "@/assets/images/projects/hiba-co/cover.jpg";
 import hb1 from "@/assets/images/projects/hiba-co/page-1.jpg";
 import hb2 from "@/assets/images/projects/hiba-co/page-2.jpg";
 import hb3 from "@/assets/images/projects/hiba-co/page-3.jpg";
 import hb4 from "@/assets/images/projects/hiba-co/page-4.jpg";
-import apBoard from "@/assets/images/projects/algerie-poste/board.jpg";
+import apBoard from "@/assets/images/projects/algerie-poste/cover.jpg";
 import ap1 from "@/assets/images/projects/algerie-poste/page-1.jpg";
 import ap2 from "@/assets/images/projects/algerie-poste/page-2.jpg";
 import ap3 from "@/assets/images/projects/algerie-poste/page-3.jpg";
 import ap4 from "@/assets/images/projects/algerie-poste/page-4.jpg";
-import board15 from "@/assets/images/archive/board-15.jpg";
-import board16 from "@/assets/images/archive/board-16.jpg";
-import board17 from "@/assets/images/archive/board-17.jpg";
-import board19 from "@/assets/images/archive/board-19.jpg";
-import board20 from "@/assets/images/archive/board-20.jpg";
-import board21 from "@/assets/images/archive/board-21.jpg";
-import board22 from "@/assets/images/archive/board-22.jpg";
-import board23 from "@/assets/images/archive/board-23.jpg";
-import board28 from "@/assets/images/archive/board-28.jpg";
-import board29 from "@/assets/images/archive/board-29.jpg";
-import board31 from "@/assets/images/archive/board-31.jpg";
-import board32 from "@/assets/images/archive/board-32.jpg";
-import board33 from "@/assets/images/archive/board-33.jpg";
-import board34 from "@/assets/images/archive/board-34.jpg";
-import board36 from "@/assets/images/archive/board-36.jpg";
-import board37 from "@/assets/images/archive/board-37.jpg";
-import board39 from "@/assets/images/archive/board-39.jpg";
-import board40 from "@/assets/images/archive/board-40.jpg";
-import board41 from "@/assets/images/archive/board-41.jpg";
-import board42 from "@/assets/images/archive/board-42.jpg";
-import board44 from "@/assets/images/archive/board-44.jpg";
-import board45 from "@/assets/images/archive/board-45.jpg";
 
 export const site = {
   name: "oussdsgn",
@@ -121,7 +198,9 @@ export const site = {
     { label: "Behance", href: "https://behance.net/oussamaaba" },
     { label: "LinkedIn", href: "https://linkedin.com/in/oussama-aba-tlm" },
     { label: "Instagram", href: "https://instagram.com/oussdesigns/" },
+    { label: "Gumroad", href: "https://oussdesigns.gumroad.com" },
   ],
+  gumroad: { href: "https://oussdesigns.gumroad.com", handle: "oussdesigns.gumroad.com" },
   images: { hero, portrait },
   marquee: ["Brand Identity", "Social Media", "Packaging", "Print Design", "UI/UX Design", "Motion Graphics"],
 };
@@ -152,7 +231,7 @@ type Shot = { image: StaticImageData; alt: string };
 
 export type ProjectBlock =
   | { type: "text"; title: string; paragraphs: string[] }
-  | { type: "gallery"; cols: 1 | 2 | 3 | 4; ratio?: string; images: Shot[] };
+  | { type: "gallery"; cols: 1 | 2 | 3 | 4; ratio?: string; paper?: boolean; images: Shot[] };
 
 export type Project = {
   slug: string;
@@ -174,6 +253,7 @@ export type Project = {
 
 const text = (title: string, ...paragraphs: string[]): ProjectBlock => ({ type: "text", title, paragraphs });
 const row = (cols: 1 | 2 | 3 | 4, images: Shot[], ratio?: string): ProjectBlock => ({ type: "gallery", cols, ratio, images });
+const paper = (cols: 1 | 2 | 3 | 4, images: Shot[]): ProjectBlock => ({ type: "gallery", cols, paper: true, images });
 
 export const projects: Project[] = [
   {
@@ -388,7 +468,7 @@ export const projects: Project[] = [
         "The wordmark features a distinctive stylized “A”, the first letter of the brand name, while the “R” is drawn in a cursive style that adds a touch of elegance and sophistication. This stylized “R” becomes the key element of the identity — a simple, memorable symbol of the brand’s commitment to quality.",
         "A predominantly monochromatic colour scheme with a single red accent balances individuality with current fashion trends, giving Ariadne a modern, distinctive presence.",
       ),
-      row(4, [
+      paper(4, [
         { image: ar1, alt: "Ariadne identity overview: hero image, brief, logo and colours" },
         { image: ar2, alt: "Ariadne logo construction, clear space and heart brand mark" },
         { image: ar3, alt: "Ariadne lifestyle applications and colour palette" },
@@ -412,7 +492,7 @@ export const projects: Project[] = [
         "The logotype was fully hand-lettered — simple but elegant, to convey a sense of glamour and refinement — and paired with Playfair Display for supporting typography.",
         "A warm palette of brown, off-white, coral and black carries the identity across shopping bags, garment tags, stickers and apparel, with black, colour and white versions of the logo for every background.",
       ),
-      row(4, [
+      paper(4, [
         { image: hb1, alt: "Hiba & Co logotype, slogan and typeface" },
         { image: hb2, alt: "Hiba & Co shopping bag, T-shirt, tags and sketchbook" },
         { image: hb3, alt: "Hiba & Co stickers and garment tags" },
@@ -437,7 +517,7 @@ export const projects: Project[] = [
         "Blue and yellow ribbons were added beneath the logo, alongside the agency’s name, making the tape unique to Chlef while staying unmistakably Algérie Poste.",
         "Colours were separated and supplied as a production-ready PDF so the printing machine could read and colour each part accurately.",
       ),
-      row(4, [
+      paper(4, [
         { image: ap1, alt: "Algérie Poste background and the Chlef brief" },
         { image: ap2, alt: "Old and new versions of the Algérie Poste duct tape" },
         { image: ap3, alt: "Mock-ups of the new Chlef duct tape rolls" },
@@ -452,22 +532,26 @@ export const getProject = (slug: string) => projects.find((p) => p.slug === slug
 export const services = [
   {
     title: "Brand Identity",
-    image: afLogoNavy,
+    image: afLogoNavy as StaticImageData | null,
+    phone: null as StaticImageData | null,
     text: "I develop cohesive brand systems that go beyond logos—defining how your brand looks, feels, and communicates. The result is a distinct, memorable identity that builds trust and stands out in a crowded market.",
   },
   {
     title: "Social Media & Campaigns",
     image: hePromo,
+    phone: null,
     text: "I design scroll-stopping social content and campaign visuals—from monthly calendars to product launches and city openings—built on a clear system so every post strengthens the brand and drives engagement.",
   },
   {
     title: "Packaging & Print",
     image: servicePackaging,
+    phone: null,
     text: "From dielines and labels to roll-ups, medals and large-format signage, I prepare print-ready work that looks as good on the shelf as it does on screen, with the production know-how to get it printed right.",
   },
   {
     title: "UI/UX & Web Design",
-    image: serviceWeb,
+    image: null,
+    phone: ibMobile,
     text: "I design intuitive, visually engaging websites that balance aesthetics with functionality. Every experience is tailored to guide users effortlessly while reinforcing your brand and driving meaningful interaction.",
   },
 ];
@@ -563,12 +647,13 @@ export const experience = [
   },
   {
     company: "Freepik & Adobe Stock",
-    href: "https://www.freepik.com/author/oussdesigns",
     role: "Graphic Assets Designer",
-    period: "09/2021 — Present",
+    // TODO: add the year both accounts closed, e.g. "09/2021 — 2025"
+    period: "From 09/2021",
     points: [
-      "Level 3 contributor on Freepik with 2.7K+ published assets and 46.4K+ downloads.",
-      "500+ assets published on Adobe Stock.",
+      "Reached Level 3 contributor on Freepik with 2.7K+ published assets and 46.4K+ downloads.",
+      "Published 500+ assets on Adobe Stock.",
+      "Now selling assets directly on Gumroad.",
     ],
   },
   {
@@ -605,54 +690,139 @@ export const education = [
   { school: "Tlemcen University", title: "Bachelor’s Degree in English Language", period: "2015 — 2018" },
 ] as { school: string; title: string; period: string; note?: string }[];
 
-/** "More work" archive on the Works page — each board is a slide from the portfolio PDF */
-export const archive = [
-  { title: "Logofolio", boards: [
-    { image: board15, alt: "Logos for Accordons nos violons, Adem Fitt, Buzz, Twsel Express, INNOVEA, Ariadne, AMS Technologie, AMS Modulaires and Medsim" },
-    { image: board16, alt: "Logos for Green Burger, FrancoNet, Citrus, Crust & Cup, Green Soup and Centella" },
-    { image: board17, alt: "Monogram and crest logos in yellow on black" },
+/**
+ * "More work" archive on the Works page. Each discipline picks a presentation:
+ *   logos   — logo cards on their brand background
+ *   posts   — social posts in a masonry wall
+ *   objects — packaging / print pieces on a soft stage
+ *   posters — framed prints
+ *   web     — laptop + phone mockups (see webProjects)
+ */
+type Piece = { image: StaticImageData; alt: string; bg?: string };
+export type ArchiveGroup = { title: string; kind: "logos" | "posts" | "objects" | "posters" | "web"; items: Piece[] };
+
+export const archive: ArchiveGroup[] = [
+  { title: "Logofolio", kind: "logos", items: [
+    { image: w_logo_01, alt: "Accordons nos violons logo", bg: "#eeeeee" },
+    { image: w_logo_02, alt: "Adem Fitt Groupe logo", bg: "#eeeeee" },
+    { image: w_logo_03, alt: "Buzz logo", bg: "#eeeeee" },
+    { image: w_logo_04, alt: "Twsel Express logo", bg: "#eeeeee" },
+    { image: w_logo_05, alt: "INNOVEA Laboratory logo", bg: "#eeeeee" },
+    { image: w_logo_06, alt: "Ariadne logo", bg: "#eeeeee" },
+    { image: w_logo_07, alt: "AMS Technologie logo", bg: "#eeeeee" },
+    { image: w_logo_08, alt: "AMS Modulaires logo", bg: "#eeeeee" },
+    { image: w_logo_09, alt: "Medsim logo", bg: "#eeeeee" },
+    { image: w_logo_10, alt: "Green Burger logo", bg: "#eeeeee" },
+    { image: w_logo_11, alt: "FrancoNet logo", bg: "#eeeeee" },
+    { image: w_logo_12, alt: "Citrus Energy Drinks logo", bg: "#eeeeee" },
+    { image: w_logo_13, alt: "Crust & Cup logo", bg: "#eeeeee" },
+    { image: w_logo_14, alt: "Green Soup logo", bg: "#eeeeee" },
+    { image: w_logo_15, alt: "Centella logo", bg: "#eeeeee" },
+    { image: w_logo_16, alt: "Crest monogram logo", bg: "#0d1015" },
+    { image: w_logo_17, alt: "Meow logo", bg: "#0d1015" },
+    { image: w_logo_18, alt: "FJ crest logo", bg: "#0d1015" },
+    { image: w_logo_19, alt: "Design Pro logo", bg: "#0d1015" },
+    { image: w_logo_20, alt: "Shield monogram logo", bg: "#0d1015" },
+    { image: w_logo_21, alt: "S monogram logo", bg: "#0d1015" },
   ] },
-  { title: "Social Media", boards: [
-    { image: board21, alt: "Adem Fitt Tourism social media posts" },
-    { image: board22, alt: "AMS Agency and INPHA-MédiS social media posts" },
-    { image: board19, alt: "AMS Groupe and AIESEC social media posts" },
-    { image: board20, alt: "Flash Graphic and Pulse social media posts" },
-    { image: board23, alt: "Capilos Colors hair-colour campaign" },
+  { title: "Social Media", kind: "posts", items: [
+    { image: w_post_01, alt: "AMS Agency end-of-year gifts post" },
+    { image: w_post_02, alt: "AMS Agency Movember post" },
+    { image: w_post_03, alt: "AMS Agency packaging post" },
+    { image: w_post_04, alt: "AMS Agency brand post" },
+    { image: w_post_05, alt: "AMS Groupe Mother’s Day post" },
+    { image: w_post_06, alt: "AMS Groupe Independence Day post" },
+    { image: w_post_07, alt: "AMS Groupe Blue November post" },
+    { image: w_post_08, alt: "AMS Groupe 1 November 1954 post" },
+    { image: w_post_09, alt: "Capilos Colors product ad" },
+    { image: w_post_10, alt: "Capilos Colors hair campaign" },
+    { image: w_post_11, alt: "Capilos Colors shades campaign" },
+    { image: w_post_12, alt: "Capilos Colors swirl campaign" },
+    { image: w_post_13, alt: "Adem Fitt Tourism Algiers trip post" },
+    { image: w_post_14, alt: "Adem Fitt Tourism summer post" },
+    { image: w_post_15, alt: "Adem Fitt Tourism explore post" },
+    { image: w_post_16, alt: "Adem Fitt Tourism travel post" },
+    { image: w_post_17, alt: "INPHA-MédiS 1 November post" },
+    { image: w_post_18, alt: "INPHA-MédiS disability day post" },
+    { image: w_post_19, alt: "INPHA-MédiS world diabetes day post" },
+    { image: w_post_20, alt: "INPHA-MédiS screening post" },
+    { image: w_post_21, alt: "Flash Graphic roll-up banner post" },
+    { image: w_post_22, alt: "Flash Graphic DHL tape post" },
+    { image: w_post_23, alt: "Pulse suture training post" },
+    { image: w_post_24, alt: "Pulse nursing training post" },
+    { image: w_post_25, alt: "AIESEC global aspect post" },
   ] },
-  { title: "Packaging", boards: [
-    { image: board32, alt: "Doubby dôr and La Trasse Dubai chocolate packaging" },
-    { image: board31, alt: "Infinix Hot 20S × PUBG Mobile special-edition box" },
-    { image: board33, alt: "Rivano Fix Primer paint bucket labels" },
-    { image: board34, alt: "My Honey jar label" },
+  { title: "Packaging", kind: "objects", items: [
+    { image: w_pack_infinix_box, alt: "Infinix Hot 20S × PUBG Mobile special-edition box" },
+    { image: w_pack_latrasse_dieline, alt: "La Trasse Dubai chocolate box dieline" },
+    { image: w_pack_doubby_mockup, alt: "Doubby dôr chocolate bar mock-up" },
+    { image: w_pack_rivano_buckets, alt: "Rivano Fix Primer paint buckets" },
+    { image: w_pack_honey_jar, alt: "My Honey jar" },
+    { image: w_pack_infinix_dieline, alt: "Infinix × PUBG box dieline" },
+    { image: w_pack_doubby_dielines, alt: "Doubby dôr chocolate dielines" },
+    { image: w_pack_rivano_pails, alt: "Rivano Fix Primer pails" },
+    { image: w_pack_rivano_label, alt: "Rivano Fix Primer label" },
+    { image: w_pack_honey_label, alt: "My Honey label" },
   ] },
-  { title: "Print", boards: [
-    { image: board28, alt: "Netto and Al Aksa roll-ups and banners" },
-    { image: board29, alt: "Metal medal designs for races and trails" },
+  { title: "Print & Medals", kind: "objects", items: [
+    { image: w_print_netto_banner, alt: "Netto Star & Magic billboard" },
+    { image: w_print_netto_magic, alt: "Netto Magic roll-up" },
+    { image: w_print_netto_star, alt: "Netto Star roll-up" },
+    { image: w_print_alaksa_halwa, alt: "Al Aksa Halwa Turc banner" },
+    { image: w_print_alaksa_tartilla, alt: "Al Aksa Tartilla banner" },
+    { image: w_medal_1, alt: "COS 2024 race medal" },
+    { image: w_medal_2, alt: "CAMA 10 km Kouba medal" },
+    { image: w_medal_3, alt: "Algiers Urban Trail medal" },
+    { image: w_medal_4, alt: "Nautical 2024 medal" },
+    { image: w_medal_5, alt: "Trail Azro N’Thor winner medal" },
+    { image: w_medal_6, alt: "Kids Trail finisher medal" },
+    { image: w_medal_7, alt: "ASBAC semi-marathon medal" },
   ] },
-  { title: "Posters & Apparel", boards: [
-    { image: board36, alt: "Car-culture poster and T-shirt graphics" },
-    { image: board37, alt: "Astronaut and streetwear T-shirt graphics" },
+  { title: "Posters & Apparel", kind: "posters", items: [
+    { image: w_poster_car_01, alt: "Car-culture graphic" },
+    { image: w_poster_car_02, alt: "Car-culture graphic" },
+    { image: w_poster_car_03, alt: "Car-culture graphic" },
+    { image: w_poster_car_04, alt: "Car-culture graphic" },
+    { image: w_poster_car_05, alt: "Car-culture graphic" },
+    { image: w_poster_car_06, alt: "Car-culture graphic" },
+    { image: w_poster_car_07, alt: "Car-culture graphic" },
+    { image: w_poster_car_08, alt: "Car-culture graphic" },
+    { image: w_poster_car_09, alt: "Car-culture graphic" },
+    { image: w_poster_car_10, alt: "Car-culture graphic" },
+    { image: w_poster_space_01, alt: "Space & streetwear graphic" },
+    { image: w_poster_space_02, alt: "Space & streetwear graphic" },
+    { image: w_poster_space_03, alt: "Space & streetwear graphic" },
+    { image: w_poster_space_04, alt: "Space & streetwear graphic" },
+    { image: w_poster_space_05, alt: "Space & streetwear graphic" },
+    { image: w_poster_space_06, alt: "Space & streetwear graphic" },
+    { image: w_poster_space_07, alt: "Space & streetwear graphic" },
+    { image: w_poster_space_08, alt: "Space & streetwear graphic" },
+    { image: w_poster_space_09, alt: "Space & streetwear graphic" },
+    { image: w_poster_space_10, alt: "Space & streetwear graphic" },
+    { image: w_poster_space_11, alt: "Space & streetwear graphic" },
   ] },
-  { title: "UI/UX & Web", boards: [
-    { image: board39, alt: "Buzz website — the future of online services in Algeria" },
-    { image: board40, alt: "IB Digital website" },
-    { image: board41, alt: "Karin Bastin website" },
-    { image: board42, alt: "AMS Groupe website" },
-  ] },
-  { title: "Web Banners", boards: [
-    { image: board44, alt: "Beko web banners" },
-    { image: board45, alt: "Telecoming × Real Madrid web banners" },
+  { title: "UI/UX & Web", kind: "web", items: [] },
+  { title: "Web Banners", kind: "objects", items: [
+    { image: w_banner_beko_dishwasher, alt: "Beko dishwasher web banner" },
+    { image: w_banner_telecoming_1, alt: "Telecoming × Real Madrid banner" },
+    { image: w_banner_telecoming_2, alt: "Telecoming × Real Madrid tickets banner" },
+    { image: w_banner_telecoming_3, alt: "Telecoming × Real Madrid club banner" },
+    { image: w_banner_beko_leaderboard, alt: "Beko leaderboard banner" },
   ] },
 ];
 
-/** Stock profiles shown on the Assets Store page */
-export const stock = [
-  { name: "Freepik", href: "https://www.freepik.com/author/oussdesigns", handle: "freepik.com/author/oussdesigns", facts: ["Level 3 contributor", "2.7K+ assets", "46.4K+ downloads"] },
-  // TODO: confirm the Adobe Stock profile URL (the CV lists “stock.adobe.com/cbr/Oussama”)
-  { name: "Adobe Stock", href: "https://stock.adobe.com/cbr/Oussama", handle: "stock.adobe.com", facts: ["500+ assets", "200+ downloads"] },
+/** Website projects, shown in laptop / phone mockups on the Works page */
+export const webProjects = [
+  { name: "Buzz", note: "Landing page & app — online services marketplace", desktop: buzzDesktop, background: "linear-gradient(140deg, #ff3b7f, #c3004f)" },
+  { name: "IB Digital", note: "Agency website", url: "https://ib-digital.com", desktop: ibDesktop, mobile: ibMobile, background: "linear-gradient(140deg, #e9e5ff, #ffe8df)" },
+  { name: "Karin Bastin", note: "Consulting website", url: "https://karinbastin.com", desktop: kbDesktop, mobile: kbMobile, background: "linear-gradient(140deg, #24314a, #0c1220)" },
+  { name: "AMS Groupe", note: "Group website & subsidiaries", desktop: amsDesktop, background: "linear-gradient(140deg, #2a63c4, #0a2a66)" },
+] as { name: string; note: string; url?: string; desktop: StaticImageData; mobile?: StaticImageData; background: string }[];
+
+/** Former stock profiles (both accounts are closed — kept as track record, not links) */
+export const stockHistory = [
+  { name: "Freepik", facts: ["Level 3 contributor", "2.7K+ assets", "46.4K+ downloads"] },
+  { name: "Adobe Stock", facts: ["500+ assets", "200+ downloads"] },
 ];
 
-export const stockFeatured = [
-  { image: board36, alt: "Car-culture poster and T-shirt graphics" },
-  { image: board37, alt: "Astronaut and streetwear T-shirt graphics" },
-];
+export const stockFeatured: Piece[] = archive.find((g) => g.kind === "posters")!.items.slice(0, 8);

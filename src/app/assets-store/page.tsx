@@ -4,7 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionLabel } from "@/components/SectionLabel";
 import { StockGallery } from "@/components/StockGallery";
 import { Cta } from "@/components/Cta";
-import { articles, stock } from "@/data/site";
+import { articles, site, stockHistory } from "@/data/site";
 
 export const metadata: Metadata = { title: "Assets Store" };
 
@@ -17,18 +17,27 @@ export default function AssetsStorePage() {
             <h1 className="page-title"><span className="line"><span>Assets Store</span></span></h1>
           </div>
           <Reveal as="p" className="store__intro">
-            Alongside client work, I design graphic assets for designers worldwide — posters, apparel graphics, illustrations and templates published on Freepik and Adobe Stock.
+            Alongside client work, I design graphic assets for other creatives — templates, posters, apparel graphics and more. Browse and buy them on my Gumroad store.
           </Reveal>
           <div className="store__cards">
-            {stock.map((s, i) => (
-              <Reveal key={s.name} delay={i * 100}>
-                <a className="store-card" href={s.href} target="_blank" rel="noopener noreferrer" data-cursor="Visit">
-                  <span className="store-card__name">{s.name} <span aria-hidden="true">↗</span></span>
-                  <span className="store-card__handle">{s.handle}</span>
-                  <span className="store-card__facts">{s.facts.map((f) => <span key={f}>{f}</span>)}</span>
-                </a>
-              </Reveal>
-            ))}
+            <Reveal>
+              <a className="store-card store-card--primary" href={site.gumroad.href} target="_blank" rel="noopener noreferrer" data-cursor="Shop">
+                <span className="store-card__name">Gumroad <span aria-hidden="true">↗</span></span>
+                <span className="store-card__handle">{site.gumroad.handle}</span>
+                <span className="store-card__cta">Shop the store</span>
+              </a>
+            </Reveal>
+            <Reveal delay={100}>
+              <div className="store-card store-card--muted">
+                <span className="store-card__label">Track record</span>
+                {stockHistory.map((s) => (
+                  <div key={s.name} className="store-card__row">
+                    <span className="store-card__row-name">{s.name}</span>
+                    <span className="store-card__facts">{s.facts.map((f) => <span key={f}>{f}</span>)}</span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
           <StockGallery />
           <div className="journal">
