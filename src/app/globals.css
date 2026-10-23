@@ -419,12 +419,12 @@ ul, ol { list-style: none; padding: 0; }
 .works__more { display: flex; justify-content: center; }
 
 /* Filters (projects page) */
-.filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
 .filter {
-  padding: 10px 18px;
+  padding: 9px 15px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
