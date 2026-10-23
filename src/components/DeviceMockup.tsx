@@ -19,12 +19,15 @@ export function DeviceScene({ desktop, mobile, name, background }: { desktop: St
   );
 }
 
-export function Phone({ image, alt, className = "" }: { image: StaticImageData; alt: string; className?: string }) {
+/** A phone; with `feed`, the image is shown as a post inside a social feed. */
+export function Phone({ image, alt, className = "", feed = false }: { image: StaticImageData; alt: string; className?: string; feed?: boolean }) {
   return (
     <div className={`phone ${className}`}>
       <span className="phone__island" aria-hidden="true" />
-      <div className="phone__display">
+      <div className={`phone__display ${feed ? "phone__display--feed" : ""}`}>
+        {feed && <span className="feed__head" aria-hidden="true"><i /><b /></span>}
         <Image src={image} alt={alt} placeholder="blur" sizes="(max-width: 760px) 40vw, 14vw" quality={85} />
+        {feed && <span className="feed__foot" aria-hidden="true"><i /><i /><i /><b /><b /></span>}
       </div>
     </div>
   );

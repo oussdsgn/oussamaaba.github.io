@@ -1,6 +1,7 @@
 // All site content lives here — edit text, links and images in one place.
 import type { StaticImageData } from "next/image";
 import { behance } from "./behance";
+import type { Mock } from "@/components/Mockups";
 
 import hero from "@/assets/images/hero.jpg";
 import portrait from "@/assets/images/portrait.jpg";
@@ -31,23 +32,8 @@ import w_logo_12 from "@/assets/images/work/logo-12.png";
 import w_logo_13 from "@/assets/images/work/logo-13.png";
 import w_logo_14 from "@/assets/images/work/logo-14.png";
 import w_logo_15 from "@/assets/images/work/logo-15.png";
-import w_medal_1 from "@/assets/images/work/medal-1.jpg";
-import w_medal_2 from "@/assets/images/work/medal-2.jpg";
-import w_medal_3 from "@/assets/images/work/medal-3.jpg";
-import w_medal_4 from "@/assets/images/work/medal-4.jpg";
-import w_medal_5 from "@/assets/images/work/medal-5.jpg";
-import w_medal_6 from "@/assets/images/work/medal-6.jpg";
-import w_medal_7 from "@/assets/images/work/medal-7.jpg";
-import w_pack_doubby_dielines from "@/assets/images/work/pack-doubby-dielines.jpg";
 import w_pack_doubby_mockup from "@/assets/images/work/pack-doubby-mockup.jpg";
-import w_pack_honey_jar from "@/assets/images/work/pack-honey-jar.jpg";
-import w_pack_honey_label from "@/assets/images/work/pack-honey-label.jpg";
 import w_pack_infinix_box from "@/assets/images/work/pack-infinix-box.jpg";
-import w_pack_infinix_dieline from "@/assets/images/work/pack-infinix-dieline.jpg";
-import w_pack_latrasse_dieline from "@/assets/images/work/pack-latrasse-dieline.jpg";
-import w_pack_rivano_buckets from "@/assets/images/work/pack-rivano-buckets.jpg";
-import w_pack_rivano_label from "@/assets/images/work/pack-rivano-label.jpg";
-import w_pack_rivano_pails from "@/assets/images/work/pack-rivano-pails.jpg";
 import w_post_01 from "@/assets/images/work/post-01.jpg";
 import w_post_02 from "@/assets/images/work/post-02.jpg";
 import w_post_03 from "@/assets/images/work/post-03.jpg";
@@ -108,6 +94,23 @@ import product6 from "@/assets/images/store/product-6.jpg";
 import product7 from "@/assets/images/store/product-7.jpg";
 import product8 from "@/assets/images/store/product-8.jpg";
 import product9 from "@/assets/images/store/product-9.jpg";
+import boxLtFront from "@/assets/images/work/box-latrasse-front.jpg";
+import boxLtSide from "@/assets/images/work/box-latrasse-side.jpg";
+import boxDyFront from "@/assets/images/work/box-doubby-y-front.jpg";
+import boxDySide from "@/assets/images/work/box-doubby-y-side.jpg";
+import boxDgFront from "@/assets/images/work/box-doubby-g-front.jpg";
+import boxDgSide from "@/assets/images/work/box-doubby-g-side.jpg";
+import cutRivanoBuckets from "@/assets/images/work/cut-pack-rivano-buckets.png";
+import cutRivanoPails from "@/assets/images/work/cut-pack-rivano-pails.png";
+import cutHoney from "@/assets/images/work/cut-pack-honey-jar.png";
+import cutMedal1 from "@/assets/images/work/cut-medal-1.png";
+import cutMedal2 from "@/assets/images/work/cut-medal-2.png";
+import cutMedal3 from "@/assets/images/work/cut-medal-3.png";
+import cutMedal4 from "@/assets/images/work/cut-medal-4.png";
+import cutMedal5 from "@/assets/images/work/cut-medal-5.png";
+import cutMedal6 from "@/assets/images/work/cut-medal-6.png";
+import cutMedal7 from "@/assets/images/work/cut-medal-7.png";
+import amsMobile from "@/assets/images/web/ams-mobile.jpg";
 import buzzDesktop from "@/assets/images/web/buzz-desktop.jpg";
 import ibDesktop from "@/assets/images/web/ib-digital-desktop.jpg";
 import ibMobile from "@/assets/images/web/ib-digital-mobile.jpg";
@@ -791,7 +794,7 @@ export const about = {
 export const experience = [
   {
     company: "AMS Group SPA",
-    href: "https://www.amsgroupe.com",
+    href: "https://amsgroupes.com",
     role: "Graphic Designer",
     period: "03/2025 — Present",
     points: [
@@ -862,12 +865,12 @@ export const education = [
  * "More work" archive on the Works page. Each discipline picks a presentation:
  *   logos   — logo cards on their brand background
  *   posts   — social posts in a masonry wall
- *   objects — packaging / print pieces on a soft stage
+ *   mockups — packaging, print and banners shown as product / roll-up / billboard / screen mockups
  *   posters — framed prints
  *   web     — laptop + phone mockups (see webProjects)
  */
 type Piece = { image: StaticImageData; alt: string; bg?: string };
-export type ArchiveGroup = { title: string; kind: "logos" | "posts" | "objects" | "posters" | "web"; items: Piece[] };
+export type ArchiveGroup = { title: string; kind: "logos" | "posts" | "posters" | "web" | "mockups"; items: Piece[]; mocks?: Mock[] };
 
 export const archive: ArchiveGroup[] = [
   { title: "Logofolio", kind: "logos", items: [
@@ -914,31 +917,28 @@ export const archive: ArchiveGroup[] = [
     { image: w_post_24, alt: "Pulse nursing training post" },
     { image: w_post_25, alt: "AIESEC global aspect post" },
   ] },
-  { title: "Packaging", kind: "objects", items: [
-    { image: w_pack_infinix_box, alt: "Infinix Hot 20S × PUBG Mobile special-edition box" },
-    { image: w_pack_latrasse_dieline, alt: "La Trasse Dubai chocolate box dieline" },
-    { image: w_pack_doubby_mockup, alt: "Doubby dôr chocolate bar mock-up" },
-    { image: w_pack_rivano_buckets, alt: "Rivano Fix Primer paint buckets" },
-    { image: w_pack_honey_jar, alt: "My Honey jar" },
-    { image: w_pack_infinix_dieline, alt: "Infinix × PUBG box dieline" },
-    { image: w_pack_doubby_dielines, alt: "Doubby dôr chocolate dielines" },
-    { image: w_pack_rivano_pails, alt: "Rivano Fix Primer pails" },
-    { image: w_pack_rivano_label, alt: "Rivano Fix Primer label" },
-    { image: w_pack_honey_label, alt: "My Honey label" },
+  { title: "Packaging", kind: "mockups", items: [], mocks: [
+    { kind: "box", front: boxLtFront, side: boxLtSide, top: "#0b100d", alt: "La Trasse Dubai chocolate box", bg: "linear-gradient(160deg, #2f5d4a, #0f2a20)" },
+    { kind: "box", front: boxDyFront, side: boxDySide, top: "#9aa42b", alt: "Doubby dôr pistachio chocolate box", bg: "linear-gradient(160deg, #f3f0dc, #d9d3a8)" },
+    { kind: "box", front: boxDgFront, side: boxDgSide, top: "#0f5f45", alt: "Doubby dôr chocolate box, green edition", bg: "linear-gradient(160deg, #e1efe8, #b9d6c7)" },
+    { kind: "photo", image: w_pack_infinix_box, alt: "Infinix Hot 20S × PUBG Mobile special-edition box" },
+    { kind: "photo", image: w_pack_doubby_mockup, alt: "Doubby dôr chocolate bar on a wooden table" },
+    { kind: "product", image: cutHoney, alt: "My Honey “secret recipe” jar", bg: "radial-gradient(90% 80% at 50% 30%, #f6d88a, #d79a2b)" },
+    { kind: "product", image: cutRivanoBuckets, alt: "Rivano Fix Primer paint buckets", bg: "radial-gradient(90% 80% at 50% 30%, #f1f3f8, #c9d0df)" },
+    { kind: "product", image: cutRivanoPails, alt: "Rivano Fix Primer pails", bg: "radial-gradient(90% 80% at 50% 30%, #ffe0dc, #e9a8a0)" },
   ] },
-  { title: "Print & Medals", kind: "objects", items: [
-    { image: w_print_netto_banner, alt: "Netto Star & Magic billboard" },
-    { image: w_print_netto_magic, alt: "Netto Magic roll-up" },
-    { image: w_print_netto_star, alt: "Netto Star roll-up" },
-    { image: w_print_alaksa_halwa, alt: "Al Aksa Halwa Turc banner" },
-    { image: w_print_alaksa_tartilla, alt: "Al Aksa Tartilla banner" },
-    { image: w_medal_1, alt: "COS 2024 race medal" },
-    { image: w_medal_2, alt: "CAMA 10 km Kouba medal" },
-    { image: w_medal_3, alt: "Algiers Urban Trail medal" },
-    { image: w_medal_4, alt: "Nautical 2024 medal" },
-    { image: w_medal_5, alt: "Trail Azro N’Thor winner medal" },
-    { image: w_medal_6, alt: "Kids Trail finisher medal" },
-    { image: w_medal_7, alt: "ASBAC semi-marathon medal" },
+  { title: "Print & Medals", kind: "mockups", items: [], mocks: [
+    { kind: "rollups", images: [w_print_netto_magic, w_print_netto_star], alt: "Netto Magic and Netto Star roll-up banners", bg: "linear-gradient(180deg, #f2efe9 0 74%, #ddd6ca 74%)" },
+    { kind: "billboard", image: w_print_netto_banner, alt: "Netto Star & Magic billboard", bg: "linear-gradient(180deg, #8fc6ef, #d8eefb 70%, #c9d8c2 70%)" },
+    { kind: "billboard", image: w_print_alaksa_halwa, alt: "Al Aksa Halwa Turc billboard", bg: "linear-gradient(180deg, #f6b779, #fbe3c4 70%, #d7c7a8 70%)" },
+    { kind: "billboard", image: w_print_alaksa_tartilla, alt: "Al Aksa Tartilla billboard", bg: "linear-gradient(180deg, #6f87b6, #c3d0ea 70%, #b9b5a3 70%)" },
+    { kind: "product", image: cutMedal1, alt: "COS 2024 race medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
+    { kind: "product", image: cutMedal2, alt: "CAMA 10 km Kouba medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
+    { kind: "product", image: cutMedal3, alt: "Algiers Urban Trail medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
+    { kind: "product", image: cutMedal4, alt: "Nautical 2024 medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
+    { kind: "product", image: cutMedal5, alt: "Trail Azro N’Thor winner medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
+    { kind: "product", image: cutMedal6, alt: "Kids Trail finisher medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
+    { kind: "product", image: cutMedal7, alt: "ASBAC semi-marathon medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
   ] },
   { title: "Posters & Apparel", kind: "posters", items: [
     { image: w_poster_car_01, alt: "Car-culture graphic" },
@@ -964,12 +964,10 @@ export const archive: ArchiveGroup[] = [
     { image: w_poster_space_11, alt: "Space & streetwear graphic" },
   ] },
   { title: "UI/UX & Web", kind: "web", items: [] },
-  { title: "Web Banners", kind: "objects", items: [
-    { image: w_banner_beko_dishwasher, alt: "Beko dishwasher web banner" },
-    { image: w_banner_telecoming_1, alt: "Telecoming × Real Madrid banner" },
-    { image: w_banner_telecoming_2, alt: "Telecoming × Real Madrid tickets banner" },
-    { image: w_banner_telecoming_3, alt: "Telecoming × Real Madrid club banner" },
-    { image: w_banner_beko_leaderboard, alt: "Beko leaderboard banner" },
+  { title: "Web Banners", kind: "mockups", items: [], mocks: [
+    { kind: "browser", image: w_banner_beko_dishwasher, alt: "Beko dishwasher web banner", layout: "hero", bg: "linear-gradient(150deg, #1f4c8f, #0b2550)" },
+    { kind: "browser", image: w_banner_beko_leaderboard, alt: "Beko leaderboard banner", layout: "leaderboard", bg: "linear-gradient(150deg, #dfe8f5, #b7c7df)" },
+    { kind: "phones", images: [w_banner_telecoming_1, w_banner_telecoming_2, w_banner_telecoming_3], alt: "Telecoming × Real Madrid banners", bg: "linear-gradient(150deg, #3b2a7a, #120c2c)" },
   ] },
 ];
 
@@ -978,7 +976,7 @@ export const webProjects = [
   { name: "Buzz", note: "Landing page & app — online services marketplace", desktop: buzzDesktop, background: "linear-gradient(140deg, #ff3b7f, #c3004f)" },
   { name: "IB Digital", note: "Agency website", url: "https://ib-digital.com", desktop: ibDesktop, mobile: ibMobile, background: "linear-gradient(140deg, #e9e5ff, #ffe8df)" },
   { name: "Karin Bastin", note: "Consulting website", url: "https://karinbastin.com", desktop: kbDesktop, mobile: kbMobile, background: "linear-gradient(140deg, #24314a, #0c1220)" },
-  { name: "AMS Groupe", note: "Group website & subsidiaries", desktop: amsDesktop, background: "linear-gradient(140deg, #2a63c4, #0a2a66)" },
+  { name: "AMS Groupe", note: "Group website & subsidiaries", url: "https://amsgroupes.com", desktop: amsDesktop, mobile: amsMobile, background: "linear-gradient(140deg, #2a63c4, #0a2a66)" },
 ] as { name: string; note: string; url?: string; desktop: StaticImageData; mobile?: StaticImageData; background: string }[];
 
 /** Former stock profiles (both accounts are closed — kept as track record, not links) */

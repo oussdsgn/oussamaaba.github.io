@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useState, type CSSProperties } from "react";
 import { archive, webProjects, type ArchiveGroup } from "@/data/site";
 import { DeviceScene } from "./DeviceMockup";
+import { MockScene, mockImage } from "./Mockups";
 import { Lightbox } from "./Lightbox";
 import { Reveal } from "./Reveal";
 
@@ -19,7 +20,7 @@ export function PieceFrame({ kind, piece, onOpen, i }: { kind: ArchiveGroup["kin
         style={piece.bg ? ({ "--piece-bg": piece.bg } as CSSProperties) : undefined}
       >
         <span className="piece__frame">
-          <Image src={piece.image} alt={piece.alt} placeholder={kind === "logos" ? "empty" : "blur"} sizes={kind === "objects" ? "(max-width: 760px) 100vw, 50vw" : "(max-width: 760px) 50vw, 25vw"} quality={90} />
+          <Image src={piece.image} alt={piece.alt} placeholder={kind === "logos" ? "empty" : "blur"} sizes="(max-width: 760px) 50vw, 25vw" quality={90} />
         </span>
       </button>
     </Reveal>
@@ -34,7 +35,9 @@ export function Archive() {
   const isWeb = group.kind === "web";
   const items = isWeb
     ? webProjects.map((w) => ({ image: w.desktop, title: w.name, caption: w.note }))
-    : group.items.map((p) => ({ image: p.image, title: group.title, caption: p.alt }));
+    : group.mocks
+      ? group.mocks.map((m) => ({ image: mockImage(m), title: group.title, caption: m.alt }))
+      : group.items.map((p) => ({ image: p.image, title: group.title, caption: p.alt }));
   const nav = useCallback((dir: 1 | -1) => setOpen((i) => (i === null ? i : (i + dir + items.length) % items.length)), [items.length]);
 
   return (
@@ -69,7 +72,16 @@ export function Archive() {
                   </div>
                 </Reveal>
               ))
-            : group.items.map((p, i) => <PieceFrame key={p.alt + i} kind={group.kind} piece={p} i={i} onOpen={() => setOpen(i)} />)}
+            : group.mocks
+              ? group.mocks.map((m, i) => (
+                  <Reveal key={m.alt} delay={(i % 2) * 90}>
+                    <button className="mock__hit" data-cursor="Zoom" onClick={() => setOpen(i)} aria-label={`Enlarge: ${m.alt}`}>
+                      <MockScene mock={m} />
+                    </button>
+                    <p className="mock__caption">{m.alt}</p>
+                  </Reveal>
+                ))
+              : group.items.map((p, i) => <PieceFrame key={p.alt + i} kind={group.kind} piece={p} i={i} onOpen={() => setOpen(i)} />)}
         </div>
       </div>
       <Lightbox items={items} index={open} onClose={() => setOpen(null)} onNav={nav} />
