@@ -701,8 +701,9 @@ export const getProject = (slug: string) => projects.find((p) => p.slug === slug
  * Categories on the Works page. Each one shows the case studies whose tags match,
  * then the extra pieces from the matching `archive` group.
  */
-export const workCategories = [
-  { label: "Brand Identity", tags: ["Brand Identity", "Brand Guidelines", "Rebrand", "Logo Design"], archive: "Logofolio" },
+export const workCategories: { label: string; tags: string[]; archive?: string }[] = [
+  { label: "Brand Identity", tags: ["Brand Identity", "Brand Guidelines", "Rebrand", "Logo Design"] },
+  { label: "Logofolio", tags: [], archive: "Logofolio" },
   { label: "Packaging", tags: ["Packaging"], archive: "Packaging" },
   { label: "Social Media", tags: ["Social Media", "Campaign"], archive: "Social Media" },
   { label: "Print", tags: ["Print"], archive: "Print & Medals" },
