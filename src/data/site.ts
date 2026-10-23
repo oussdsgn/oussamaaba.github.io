@@ -104,6 +104,15 @@ import w_print_alaksa_tartilla from "@/assets/images/work/print-alaksa-tartilla.
 import w_print_netto_banner from "@/assets/images/work/print-netto-banner.jpg";
 import w_print_netto_magic from "@/assets/images/work/print-netto-magic.jpg";
 import w_print_netto_star from "@/assets/images/work/print-netto-star.jpg";
+import product1 from "@/assets/images/store/product-1.jpg";
+import product2 from "@/assets/images/store/product-2.jpg";
+import product3 from "@/assets/images/store/product-3.jpg";
+import product4 from "@/assets/images/store/product-4.jpg";
+import product5 from "@/assets/images/store/product-5.jpg";
+import product6 from "@/assets/images/store/product-6.jpg";
+import product7 from "@/assets/images/store/product-7.jpg";
+import product8 from "@/assets/images/store/product-8.jpg";
+import product9 from "@/assets/images/store/product-9.jpg";
 import buzzDesktop from "@/assets/images/web/buzz-desktop.jpg";
 import ibDesktop from "@/assets/images/web/ib-digital-desktop.jpg";
 import ibMobile from "@/assets/images/web/ib-digital-mobile.jpg";
@@ -198,9 +207,9 @@ export const site = {
     { label: "Behance", href: "https://behance.net/oussamaaba" },
     { label: "LinkedIn", href: "https://linkedin.com/in/oussama-aba-tlm" },
     { label: "Instagram", href: "https://instagram.com/oussdesigns/" },
-    { label: "Gumroad", href: "https://oussdesigns.gumroad.com" },
+    { label: "Gumroad", href: "https://oussdsgn.gumroad.com" },
   ],
-  gumroad: { href: "https://oussdesigns.gumroad.com", handle: "oussdesigns.gumroad.com" },
+  gumroad: { href: "https://oussdsgn.gumroad.com", handle: "oussdsgn.gumroad.com" },
   images: { hero, portrait },
   marquee: ["Brand Identity", "Social Media", "Packaging", "Print Design", "UI/UX Design", "Motion Graphics"],
 };
@@ -653,7 +662,7 @@ export const experience = [
     points: [
       "Reached Level 3 contributor on Freepik with 2.7K+ published assets and 46.4K+ downloads.",
       "Published 500+ assets on Adobe Stock.",
-      "Now selling assets directly on Gumroad.",
+      "Now selling brush kits for Procreate, Photoshop and Affinity directly on Gumroad.",
     ],
   },
   {
@@ -825,4 +834,16 @@ export const stockHistory = [
   { name: "Adobe Stock", facts: ["500+ assets", "200+ downloads"] },
 ];
 
-export const stockFeatured: Piece[] = archive.find((g) => g.kind === "posters")!.items.slice(0, 8);
+
+/** Products on Gumroad (prices in USD — update when they change) */
+export const products = [
+  { name: "REDLINE 26 — Procreate & Photoshop Brush Kit", href: "https://oussdsgn.gumroad.com/l/26essentialbrushes", price: 13, image: product1 },
+  { name: "INKWELL 12 — Ink & Comic Brush Kit", href: "https://oussdsgn.gumroad.com/l/otnjsc", price: 13, image: product2 },
+  { name: "Chalk Brush Pack — 43 Brushes for Procreate, Photoshop & Clip Studio", href: "https://oussdsgn.gumroad.com/l/hevkh", price: 12, image: product3 },
+  { name: "Scribbles for Lettering — 21 Photoshop Brushes", href: "https://oussdsgn.gumroad.com/l/kwkwmq", price: 10, image: product4 },
+  { name: "50 Stroke & Splatter Brushes Collection", href: "https://oussdsgn.gumroad.com/l/stroke-splatter-brushes-collection", price: 15, image: product5 },
+  { name: "Affinity Artistic Brushes Vol. 1", href: "https://oussdsgn.gumroad.com/l/affinity-artistic-brushes-vol-1", price: 13, image: product6 },
+  { name: "30 Cloud Effect Photoshop Brushes", href: "https://oussdsgn.gumroad.com/l/cloud-effect-photoshop-brushes", price: 13, image: product7 },
+  { name: "Blood Brushes for Photoshop", href: "https://oussdsgn.gumroad.com/l/blood-brushes-photoshop", price: 13, image: product8 },
+  { name: "Glitter Luxe — Glitter Texture Multi-App Brushes", href: "https://oussdsgn.gumroad.com/l/glitter-luxe-brushes", price: 25, image: product9 },
+];

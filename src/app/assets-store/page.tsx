@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Reveal } from "@/components/Reveal";
 import { SectionLabel } from "@/components/SectionLabel";
-import { StockGallery } from "@/components/StockGallery";
 import { Cta } from "@/components/Cta";
-import { articles, site, stockHistory } from "@/data/site";
+import Image from "next/image";
+import { articles, products, site, stockHistory } from "@/data/site";
 
 export const metadata: Metadata = { title: "Assets Store" };
 
@@ -17,7 +17,7 @@ export default function AssetsStorePage() {
             <h1 className="page-title"><span className="line"><span>Assets Store</span></span></h1>
           </div>
           <Reveal as="p" className="store__intro">
-            Alongside client work, I design graphic assets for other creatives — templates, posters, apparel graphics and more. Browse and buy them on my Gumroad store.
+            Alongside client work, I make tools for other creatives — texture, ink, chalk and effect brush kits for Procreate, Photoshop, Affinity and Clip Studio. Available on my Gumroad store.
           </Reveal>
           <div className="store__cards">
             <Reveal>
@@ -39,7 +39,19 @@ export default function AssetsStorePage() {
               </div>
             </Reveal>
           </div>
-          <StockGallery />
+          <div className="products">
+            {products.map((pr, i) => (
+              <Reveal key={pr.href} delay={(i % 3) * 80}>
+                <a className="product" href={pr.href} target="_blank" rel="noopener noreferrer" data-cursor="Buy">
+                  <span className="product__media"><Image src={pr.image} alt="" placeholder="blur" sizes="(max-width: 760px) 50vw, 30vw" /></span>
+                  <span className="product__meta">
+                    <span className="product__name">{pr.name}</span>
+                    <span className="product__price">${pr.price}</span>
+                  </span>
+                </a>
+              </Reveal>
+            ))}
+          </div>
           <div className="journal">
             <SectionLabel index="01" title="Journal" />
             <p className="journal__note">Design work from other studios that caught my eye.</p>
