@@ -99,9 +99,9 @@ export default function Home() {
         <div className="container">
           <SectionLabel index="08" title="Articles" />
           <div className="articles__grid">
-            {articles.map((a, i) => <ArticleCard key={a.title} {...a} delay={i * 80} />)}
+            {articles.map((a, i) => <ArticleCard key={a.slug} {...a} delay={i * 80} />)}
           </div>
-          <div className="articles__more"><Link className="link-arrow" href="/assets-store">View all articles <Arrow /></Link></div>
+          <div className="articles__more"><Link className="link-arrow" href="/assets-store#journal">View all articles <Arrow /></Link></div>
         </div>
       </section>
 

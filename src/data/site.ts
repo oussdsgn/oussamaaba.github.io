@@ -102,6 +102,14 @@ import cutMedal5 from "@/assets/images/work/cut-medal-5.png";
 import cutMedal6 from "@/assets/images/work/cut-medal-6.png";
 import cutMedal7 from "@/assets/images/work/cut-medal-7.png";
 import amsMobile from "@/assets/images/web/ams-mobile.jpg";
+import jEllis1 from "@/assets/images/journal/ellis-1.jpg";
+import jEllis2 from "@/assets/images/journal/ellis-2.jpg";
+import jIkea1 from "@/assets/images/journal/ikea-1.jpg";
+import jIkea2 from "@/assets/images/journal/ikea-2.jpg";
+import jAlgerian1 from "@/assets/images/journal/algerian-1.jpg";
+import jAlgerian2 from "@/assets/images/journal/algerian-2.jpg";
+import jFraenk1 from "@/assets/images/journal/fraenk-1.jpg";
+import jFraenk2 from "@/assets/images/journal/fraenk-2.jpg";
 import buzzDesktop from "@/assets/images/web/buzz-desktop.jpg";
 import ibDesktop from "@/assets/images/web/ib-digital-desktop.jpg";
 import ibMobile from "@/assets/images/web/ib-digital-mobile.jpg";
@@ -759,12 +767,83 @@ export const stats: Stat[] = [
 ];
 
 // Newest first
-export const articles = [
-  { title: "Why Algerian Art Deserves Its Own Magazine", category: "Design", date: "Oct 4, 2026", image: artAlgerian },
-  { title: "Why \u201cDiscount\u201d Doesn\u2019t Have to Mean \u201cBoring\u201d", category: "Design", date: "Aug 8, 2026", image: artFraenk },
-  { title: "IKEA Turned the Football Wall Into a Sofa Sale", category: "Design", date: "Jul 16, 2026", image: artIkea },
-  { title: "Studio Blackburn Gives Ellis Butchers a Cast of Characters From Meat", category: "Design", date: "Jan 12, 2026", image: artStandard },
+export type Article = {
+  slug: string;
+  title: string;
+  category: string;
+  date: string;
+  image: StaticImageData;
+  /** Short line under the title */
+  dek?: string;
+  /** Body, top to bottom: paragraphs and images */
+  body: ({ p: string } | { img: StaticImageData; alt: string })[];
+  source?: { label: string; href: string };
+};
+
+export const articles: Article[] = [
+  {
+    slug: "why-algerian-art-deserves-its-own-magazine",
+    title: "Why Algerian Art Deserves Its Own Magazine",
+    category: "Design",
+    date: "Oct 4, 2026",
+    image: artAlgerian,
+    dek: "The Algérian is a concept art magazine that puts Algerian paintings and the stories behind them on the cover.",
+    body: [
+      { img: jAlgerian1, alt: "The Algérian magazine covers" },
+      { p: "What if Algeria had its own art magazine? The Algérian is a concept I designed to explore exactly that. It celebrates Algerian art through paintings, artists and the stories behind them, inspired by The Barcelonian Illustrated." },
+      { img: jAlgerian2, alt: "The Algérian magazine mock-up" },
+      { p: "Every issue is built around a single painting. Issue 001 features a girl with a striped headscarf and a bowl of pomegranates, and Issue 002 features a portrait by Antonio Zeno Shindler. A bold slab serif masthead and a dark spine strip keep the cover simple, so the artwork does the talking." },
+      { p: "It is still just an idea, but I wanted to see how it would feel in real life. So I designed the covers and built mockups in a café and on a bookstore shelf. Algerian art deserves to be held, collected and talked about." },
+    ],
+  },
+  {
+    slug: "why-discount-doesnt-have-to-mean-boring",
+    title: "Why “Discount” Doesn’t Have to Mean “Boring”",
+    category: "Design",
+    date: "Aug 8, 2026",
+    image: artFraenk,
+    dek: "How Make Studio’s fraenk rebrand turned a budget mobile tariff into a sharp, memorable identity.",
+    body: [
+      { img: jFraenk1, alt: "fraenk rebrand by Make Studio" },
+      { p: "Fraenk is Deutsche Telekom’s app-only mobile tariff, and Make Studio’s rebrand proves that a discount brand can still have personality. Instead of shouting louder on price, which is the usual discount playbook, they took the brand’s old principle of “radically unspectacular” and made it sharper: “spectacularly simple.”" },
+      { img: jFraenk2, alt: "fraenk typography and illustrations" },
+      { p: "The logo is no longer the hero. Type is. The “æ” ligature was redrawn to feel like two letters giving each other a warm hug, and a custom headline typeface built on Displaay’s Greed carries the personality across every touchpoint. Icons were replaced with a set of playful illustrated doodles." },
+      { p: "The result is more than just prettier. Brand perception rose by more than 30% among people who already knew fraenk, and willingness to recommend more than doubled. It is a great reminder that “simple” and “forgettable” are not the same thing." },
+    ],
+  },
+  {
+    slug: "ikea-turned-the-football-wall-into-a-sofa-sale",
+    title: "IKEA Turned the Football Wall Into a Sofa Sale",
+    category: "Design",
+    date: "Jul 16, 2026",
+    image: artIkea,
+    body: [
+      { img: jIkea1, alt: "IKEA FLAT OUT campaign" },
+      { p: "On a free kick, one defender lies flat behind the wall to block shots under the jump. IKEA Saudi Arabia looked at that pose and saw a man lounging on an invisible sofa. That became FLAT OUT, a real-time campaign made with local franchisee Alsulaiman and Memac Ogilvy during the World Cup." },
+      { img: jIkea2, alt: "IKEA FLAT OUT campaign visual" },
+      { p: "The game was simple. Spot the moment a player lies down, take a photo, and send it to IKEA by direct message. You get an instant discount on a sofa, and the percentage matches the player’s shirt number. Number 7 gives 7% off, number 21 gives 21%. Every free kick became a small bet." },
+      { p: "The smart part is the cost. No TV rights, no FIFA sponsorship, no star players, so the production costs almost nothing while the visibility is huge. And to claim the voucher, people share their email and phone number right when they want a sofa. IKEA didn’t just give a discount, it collected qualified leads." },
+    ],
+  },
+  {
+    slug: "studio-blackburn-ellis-butchers",
+    title: "Studio Blackburn Gives Ellis Butchers a Cast of Characters From Meat",
+    category: "Design",
+    date: "Jan 12, 2026",
+    image: artStandard,
+    dek: "Ripping up the butcher-branding rulebook.",
+    body: [
+      { img: jEllis1, alt: "Ellis Butchers identity by Studio Blackburn" },
+      { p: "No livestock silhouettes. No cut charts. Studio Blackburn ripped up the butcher-branding rulebook for Ellis Butchers." },
+      { img: jEllis2, alt: "Ellis Butchers meat characters" },
+      { p: "Instead of humanising the animal, they humanised the meat — giving cuts of meat their own legs, led by a mascot called Meat Ellis, a cast of characters wholesome, unexpected and genuinely fun." },
+      { p: "Two shops, one parent brand, two distinct personalities — proof that identity systems can flex by neighbourhood without losing coherence." },
+    ],
+    source: { label: "Full project", href: "https://lnkd.in/dBnTxXWh" },
+  },
 ];
+
+export const getArticle = (slug: string) => articles.find((a) => a.slug === slug);
 
 export const clients = [
   { name: "Flash Graphic", image: logo01 },

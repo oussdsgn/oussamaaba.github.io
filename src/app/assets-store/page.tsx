@@ -46,11 +46,11 @@ export default function AssetsStorePage() {
               </Reveal>
             ))}
           </div>}
-          <div className="journal">
+          <div className="journal" id="journal">
             <SectionLabel index="01" title="Journal" />
-            <p className="journal__note">Design work from other studios that caught my eye.</p>
+            <p className="journal__note">Notes on design — my own concepts and work from other studios that caught my eye.</p>
             <div className="grid-2">
-              {articles.map((a, i) => <ArticleCard key={a.title} {...a} wide delay={(i % 2) * 90} />)}
+              {articles.map((a, i) => <ArticleCard key={a.slug} {...a} wide delay={(i % 2) * 90} />)}
             </div>
           </div>
         </div>
