@@ -34,7 +34,7 @@ export function CaseStudyBlocks({ blocks, title }: { blocks: ProjectBlock[]; tit
         return (
           <div
             key={i}
-            className={`cs-gallery cs-gallery--${b.cols} ${b.ratio ? "is-cropped" : ""} ${b.paper ? "cs-gallery--paper" : ""}`}
+            className={`cs-gallery cs-gallery--${b.cols} ${b.ratio ? "is-cropped" : ""}`}
             style={b.ratio ? ({ "--ratio": b.ratio } as CSSProperties) : undefined}
           >
             {b.images.map((im, j) => {

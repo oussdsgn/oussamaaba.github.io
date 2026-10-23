@@ -17,7 +17,7 @@ export default function AssetsStorePage() {
             <h1 className="page-title"><span className="line"><span>Assets Store</span></span></h1>
           </div>
           <Reveal as="p" className="store__intro">
-            Alongside client work, I make tools for other creatives — texture, ink, chalk and effect brush kits for Procreate, Photoshop, Affinity and Clip Studio. Available on my Gumroad store.
+            Alongside client work, I make tools for other creatives — texture, ink, chalk and effect brush kits for Procreate, Photoshop, Affinity and Clip Studio. Available on my Gumroad store — with more on Magnific and DeviantArt.
           </Reveal>
           <div className="store__cards">
             <Reveal>
@@ -38,6 +38,19 @@ export default function AssetsStorePage() {
                 ))}
               </div>
             </Reveal>
+          </div>
+          <div className="store__elsewhere">
+            {site.elsewhere.map((e, i) => (
+              <Reveal key={e.name} delay={i * 80}>
+                <a className="store-link" href={e.href} target="_blank" rel="noopener noreferrer" data-cursor="Visit">
+                  <span>
+                    <span className="store-link__name">{e.name}</span>
+                    <span className="store-link__handle">{e.handle}</span>
+                  </span>
+                  <span className="store-link__note">{e.note} <span aria-hidden="true">↗</span></span>
+                </a>
+              </Reveal>
+            ))}
           </div>
           <div className="products">
             {products.map((pr, i) => (

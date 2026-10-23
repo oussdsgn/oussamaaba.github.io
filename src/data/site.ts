@@ -1,5 +1,6 @@
 // All site content lives here — edit text, links and images in one place.
 import type { StaticImageData } from "next/image";
+import { behance } from "./behance";
 
 import hero from "@/assets/images/hero.jpg";
 import portrait from "@/assets/images/portrait.jpg";
@@ -174,23 +175,7 @@ import inoLogo from "@/assets/images/projects/innovea/logo-system.jpg";
 import inoEvent from "@/assets/images/projects/innovea/event.jpg";
 import inoLaptop from "@/assets/images/projects/innovea/laptop.jpg";
 import inoSignage from "@/assets/images/projects/innovea/signage.jpg";
-import inoGuidelines from "@/assets/images/projects/innovea/guidelines.jpg";
 import afGuidelines from "@/assets/images/projects/adem-fitt/guidelines.jpg";
-import arBoard from "@/assets/images/projects/ariadne/cover.jpg";
-import ar1 from "@/assets/images/projects/ariadne/page-1.jpg";
-import ar2 from "@/assets/images/projects/ariadne/page-2.jpg";
-import ar3 from "@/assets/images/projects/ariadne/page-3.jpg";
-import ar4 from "@/assets/images/projects/ariadne/page-4.jpg";
-import hbBoard from "@/assets/images/projects/hiba-co/cover.jpg";
-import hb1 from "@/assets/images/projects/hiba-co/page-1.jpg";
-import hb2 from "@/assets/images/projects/hiba-co/page-2.jpg";
-import hb3 from "@/assets/images/projects/hiba-co/page-3.jpg";
-import hb4 from "@/assets/images/projects/hiba-co/page-4.jpg";
-import apBoard from "@/assets/images/projects/algerie-poste/cover.jpg";
-import ap1 from "@/assets/images/projects/algerie-poste/page-1.jpg";
-import ap2 from "@/assets/images/projects/algerie-poste/page-2.jpg";
-import ap3 from "@/assets/images/projects/algerie-poste/page-3.jpg";
-import ap4 from "@/assets/images/projects/algerie-poste/page-4.jpg";
 
 export const site = {
   name: "oussdsgn",
@@ -208,6 +193,13 @@ export const site = {
     { label: "LinkedIn", href: "https://linkedin.com/in/oussama-aba-tlm" },
     { label: "Instagram", href: "https://instagram.com/oussdesigns/" },
     { label: "Gumroad", href: "https://oussdsgn.gumroad.com" },
+    { label: "Magnific", href: "https://www.magnific.com/author/suoliemane123" },
+    { label: "DeviantArt", href: "https://www.deviantart.com/oussdesigns" },
+  ],
+  /** Other places to find and buy work, shown on the Assets Store page */
+  elsewhere: [
+    { name: "Magnific", handle: "magnific.com/author/suoliemane123", note: "Stock assets", href: "https://www.magnific.com/author/suoliemane123" },
+    { name: "DeviantArt", handle: "deviantart.com/oussdesigns", note: "Artworks & illustration", href: "https://www.deviantart.com/oussdesigns" },
   ],
   gumroad: { href: "https://oussdsgn.gumroad.com", handle: "oussdsgn.gumroad.com" },
   images: { hero, portrait },
@@ -240,7 +232,7 @@ type Shot = { image: StaticImageData; alt: string };
 
 export type ProjectBlock =
   | { type: "text"; title: string; paragraphs: string[] }
-  | { type: "gallery"; cols: 1 | 2 | 3 | 4; ratio?: string; paper?: boolean; images: Shot[] };
+  | { type: "gallery"; cols: 1 | 2 | 3 | 4; ratio?: string; images: Shot[] };
 
 export type Project = {
   slug: string;
@@ -262,7 +254,14 @@ export type Project = {
 
 const text = (title: string, ...paragraphs: string[]): ProjectBlock => ({ type: "text", title, paragraphs });
 const row = (cols: 1 | 2 | 3 | 4, images: Shot[], ratio?: string): ProjectBlock => ({ type: "gallery", cols, ratio, images });
-const paper = (cols: 1 | 2 | 3 | 4, images: Shot[]): ProjectBlock => ({ type: "gallery", cols, paper: true, images });
+/** The images of a Behance project as gallery rows, in the original order. */
+const deck = (slug: string, label: string, cols: 1 | 2, from = 0): ProjectBlock[] => {
+  const imgs = behance[slug].map((image, i) => ({ image, alt: `${label} — page ${i + 1}` })).slice(from);
+  const rows: ProjectBlock[] = [];
+  for (let i = 0; i < imgs.length; i += cols) rows.push(row(Math.min(cols, imgs.length - i) as 1 | 2, imgs.slice(i, i + cols)));
+  return rows;
+};
+const be = (path: string) => ({ label: "Full project on Behance", href: `https://www.behance.net/gallery/${path}` });
 
 export const projects: Project[] = [
   {
@@ -456,83 +455,249 @@ export const projects: Project[] = [
       row(1, [{ image: inoSignage, alt: "INNOVEA Laboratoires sign on a textured wall in sunlight" }]),
       text(
         "Guidelines",
-        "The system is documented in a full brand book: logo orientation and construction grid, wordmark design based on Poppins, primary and secondary colour palettes, brand patterns, typography, and rules for incorrect logo use.",
+        "The system is documented in a full brand book: logo orientation and construction grid, a wordmark based on Poppins and refined to be more geometric, primary and secondary colour palettes, brand patterns, typography, and rules for incorrect logo use.",
       ),
-      row(1, [{ image: inoGuidelines, alt: "Pages from the INNOVEA brand guidelines: logo, grid, colours, wordmark, patterns, typography and misuse" }]),
+      ...deck("innovea", "INNOVEA brand guidelines", 2),
     ],
+  },
+  {
+    slug: "dikra-madjdouline",
+    title: "Dikra Madjdouline",
+    tags: ["Brand Identity", "Brand Guidelines"],
+    image: behance["dikra-madjdouline"][0],
+    services: ["Brand Identity", "Logo Design", "Brand Guidelines"],
+    year: "2026",
+    info: [
+      "A complete, editorial brand identity system for Dikra Madjdouline, a personal lash and brow studio. The identity is built around a delicate “dm” monogram, a warm palette of blush, cream, ink black and gold, and a soft, precise, unmistakably feminine tone.",
+      "The 15-page guideline covers the full visual language: logo suite and clear-space rules, colour palette, typography, supporting motifs, photography direction, brand voice, and real-world applications across social media and stationery.",
+      "Soft natural light, warm tones and room to breathe — detail over drama throughout. Designed to feel calm, refined and reassuring: where a steady hand becomes quiet beauty.",
+    ],
+    link: be("252455061/Dikra-Madjdouline-Lash-Brow-Studio-Brand-Identity"),
+    blocks: deck("dikra-madjdouline", "Dikra Madjdouline brand guidelines", 2, 1),
   },
   {
     slug: "ariadne",
     title: "Ariadne",
     tags: ["Brand Identity"],
-    image: arBoard,
+    image: behance.ariadne[0],
     services: ["Brand Identity", "Logo Design"],
+    year: "2024",
     info: [
       "Ariadne is a youthful clothing brand. The brief was to create a memorable brand identity with a minimalist, modern logo — simple, effective, and appealing to a young, progressive audience — built on three principles: comfort, relevance to fashion trends, and expression of individuality.",
     ],
-    link: { label: "Full project on Behance", href: "https://www.behance.net/gallery/208883737/Ariadne-Clothing-Brand-Identity" },
+    link: be("208883737/Ariadne-Clothing-Brand-Identity"),
     blocks: [
       text(
         "Solution",
         "The wordmark features a distinctive stylized “A”, the first letter of the brand name, while the “R” is drawn in a cursive style that adds a touch of elegance and sophistication. This stylized “R” becomes the key element of the identity — a simple, memorable symbol of the brand’s commitment to quality.",
         "A predominantly monochromatic colour scheme with a single red accent balances individuality with current fashion trends, giving Ariadne a modern, distinctive presence.",
       ),
-      paper(4, [
-        { image: ar1, alt: "Ariadne identity overview: hero image, brief, logo and colours" },
-        { image: ar2, alt: "Ariadne logo construction, clear space and heart brand mark" },
-        { image: ar3, alt: "Ariadne lifestyle applications and colour palette" },
-        { image: ar4, alt: "Ariadne typography (Gabarito and Outfit) and repeating pattern" },
-      ]),
+      ...deck("ariadne", "Ariadne brand identity", 1, 1),
     ],
   },
   {
     slug: "hiba-co",
     title: "Hiba & Co",
-    tags: ["Brand Identity"],
-    image: hbBoard,
+    tags: ["Brand Identity", "Packaging"],
+    image: behance["hiba-co"][4],
     services: ["Brand Identity", "Logo Design", "Packaging"],
+    year: "2023",
     info: [
       "Hiba & Co is a fashion studio that relies solely on natural materials, imported and manufactured with care. Its slogan, “Made with soul”, sets the tone for the whole identity.",
     ],
-    link: { label: "Full project on Behance", href: "https://www.behance.net/gallery/162190171/Hiba-Co-Fashion-Studio-Brand-Identity" },
+    link: be("162190171/Hiba-Co-Fashion-Studio-Brand-Identity"),
     blocks: [
       text(
         "Solution",
         "The logotype was fully hand-lettered — simple but elegant, to convey a sense of glamour and refinement — and paired with Playfair Display for supporting typography.",
         "A warm palette of brown, off-white, coral and black carries the identity across shopping bags, garment tags, stickers and apparel, with black, colour and white versions of the logo for every background.",
       ),
-      paper(4, [
-        { image: hb1, alt: "Hiba & Co logotype, slogan and typeface" },
-        { image: hb2, alt: "Hiba & Co shopping bag, T-shirt, tags and sketchbook" },
-        { image: hb3, alt: "Hiba & Co stickers and garment tags" },
-        { image: hb4, alt: "Hiba & Co logo versions and colour palette" },
-      ]),
+      ...deck("hiba-co", "Hiba & Co brand identity", 1),
     ],
   },
   {
     slug: "algerie-poste",
     title: "Algérie Poste — Chlef",
     tags: ["Packaging", "Rebrand"],
-    image: apBoard,
+    image: behance["algerie-poste"][5],
     services: ["Packaging", "Print Production"],
+    year: "2023",
     info: [
       "Algérie Poste is a public establishment of an industrial and commercial nature, operating both as a mail operator and as a financial institution.",
       "Its subsidiary in the Wilaya of Chlef requested a rebrand of their adhesive duct tape: a more detailed version carrying the agency’s name, to distinguish it from the other subsidiaries of the Algerian postal service.",
     ],
-    link: { label: "Full project on Behance", href: "https://www.behance.net/gallery/184022365/Algerian-Postal-Service-Adhesive-Duct-Tape-rebranding" },
+    link: be("184022385/Algerian-Postal-Service-Adhesive-Duct-Tape-rebranding"),
     blocks: [
       text(
         "Solution",
         "Blue and yellow ribbons were added beneath the logo, alongside the agency’s name, making the tape unique to Chlef while staying unmistakably Algérie Poste.",
         "Colours were separated and supplied as a production-ready PDF so the printing machine could read and colour each part accurately.",
       ),
-      paper(4, [
-        { image: ap1, alt: "Algérie Poste background and the Chlef brief" },
-        { image: ap2, alt: "Old and new versions of the Algérie Poste duct tape" },
-        { image: ap3, alt: "Mock-ups of the new Chlef duct tape rolls" },
-        { image: ap4, alt: "Chlef duct tape applied on a concrete step" },
-      ]),
+      ...deck("algerie-poste", "Algérie Poste duct tape", 1),
     ],
+  },
+  {
+    slug: "power-limb",
+    title: "Power Limb",
+    tags: ["Packaging"],
+    image: behance["power-limb"][7],
+    services: ["Packaging", "Illustration"],
+    year: "2023",
+    info: [
+      "Power Limb is an Algerian company that provides and manufactures prosthetic and orthotic limbs for people with disabilities. They requested a design for the adhesive tape they seal their packages with.",
+    ],
+    link: be("186059523/Power-Limb-Prosthetic-Orthotic-Adhesive-tape-Design"),
+    blocks: [
+      text(
+        "Solution",
+        "The tape carries a subtitle explaining the company’s mission and an illustration of Algiers’ Martyrs’ Memorial to represent the company’s Algerian identity.",
+        "The logo of Flash Graphic, the tape manufacturer, sits on the inner side as a watermark.",
+      ),
+      ...deck("power-limb", "Power Limb adhesive tape", 2),
+    ],
+  },
+  {
+    slug: "a-plus-english",
+    title: "A+ English",
+    tags: ["Brand Identity", "Brand Guidelines"],
+    image: behance["a-plus-english"][0],
+    services: ["Brand Identity", "Brand Guidelines"],
+    year: "2023",
+    info: ["Brand identity and guidelines for A+ English, a language school."],
+    link: be("178029797/A-English-Brand-Identity-and-Guidelines"),
+    blocks: deck("a-plus-english", "A+ English brand guidelines", 2, 1),
+  },
+  {
+    slug: "vitasens",
+    title: "Vitasens",
+    tags: ["Brand Identity", "Brand Guidelines"],
+    image: behance.vitasens[0],
+    services: ["Brand Identity", "Brand Guidelines"],
+    year: "2023",
+    info: ["Brand identity and guidelines for Vitasens: logo build-up and grid, colours, patterns and applications."],
+    link: be("176829177/Vitasesns-Brand-Identity-and-Guidelines"),
+    blocks: deck("vitasens", "Vitasens brand identity", 1, 1),
+  },
+  {
+    slug: "glow-body",
+    title: "Glow Body Clinic",
+    tags: ["Brand Identity", "Brand Guidelines"],
+    image: behance["glow-body"][0],
+    services: ["Brand Identity", "Brand Handbook"],
+    year: "2023",
+    info: ["Brand handbook for Glow Body, a surgery clinic — a brand meant to feel safe, compassionate, efficient, professional and caring. It covers the logo build-up, typography (Magnia and Gotham), colour palette and stationery."],
+    link: be("165251291/Glow-Body-Surgery-Clinic-Brand-Handbook"),
+    blocks: deck("glow-body", "Glow Body brand handbook", 1, 1),
+  },
+  {
+    slug: "esook",
+    title: "eSook",
+    tags: ["Brand Identity", "UI/UX"],
+    image: behance.esook[0],
+    services: ["Brand Identity", "UI/UX"],
+    year: "2023",
+    info: ["Brand identity for eSook, a digital marketplace: logo, icon build-up, Montserrat typography, colours, logo variations and mobile app mock-ups."],
+    link: be("161867871/eSook-Digital-Marketplace-brand-identity"),
+    blocks: deck("esook", "eSook brand identity", 1, 1),
+  },
+  {
+    slug: "lekna",
+    title: "Lekna Space",
+    tags: ["Brand Identity"],
+    image: behance.lekna[0],
+    services: ["Brand Identity", "Logo Design"],
+    year: "2022",
+    info: ["Brand identity for Lekna Space, a language school: logo and structure, logo variations, colours and gradient, subsidiaries, social media, business cards and T-shirts."],
+    link: be("159873283/Lekna-school-Brand-Identity"),
+    blocks: deck("lekna", "Lekna Space brand identity", 1, 1),
+  },
+  {
+    slug: "green-burger",
+    title: "Green Burger",
+    tags: ["Brand Identity"],
+    image: behance["green-burger"][0],
+    services: ["Logo Design", "Brand Identity"],
+    year: "2024",
+    info: ["Brand identity for Green Burger, a healthy-snacks restaurant."],
+    link: be("197551573/Green-Burger-Restaurent-Brand-Identity"),
+    blocks: [],
+  },
+  {
+    slug: "playing-cards",
+    title: "Ace — Playing Cards",
+    tags: ["Illustration", "Packaging"],
+    image: behance["playing-cards"][0],
+    services: ["Illustration", "Packaging"],
+    year: "2023",
+    info: ["A minimal deck of playing cards built from geometric shapes: a logo, gradient colours, suit build-ups, a textured card back and box packaging."],
+    link: be("160399265/A-Minimal-playing-cards-deck-Oussama-A"),
+    blocks: deck("playing-cards", "Ace playing cards", 1, 1),
+  },
+  {
+    slug: "gradient-lettering",
+    title: "Abstract Gradient Lettering",
+    tags: ["Illustration"],
+    image: behance["gradient-lettering"][2],
+    services: ["Lettering", "Illustration"],
+    year: "2024",
+    info: ["A series of abstract lettering pieces with gradient colour."],
+    link: be("195245921/Abstract-Gradient-Lettering"),
+    blocks: deck("gradient-lettering", "Abstract gradient lettering", 2),
+  },
+  {
+    slug: "sonatrach-60",
+    title: "Sonatrach 60th Anniversary",
+    tags: ["Brand Identity"],
+    image: behance["sonatrach-60"][0],
+    services: ["Brand Identity", "Brand Guidelines"],
+    year: "2022",
+    info: ["A 60th-anniversary brand identity for Sonatrach, with guidelines covering logo, colours, typography, variations and mock-ups."],
+    link: be("158992267/Sonatrach-60th-anniversary-brand-identity"),
+    blocks: deck("sonatrach-60", "Sonatrach 60th anniversary identity", 1, 1),
+  },
+  {
+    slug: "sisters",
+    title: "Sisters",
+    tags: ["Brand Identity", "Packaging"],
+    image: behance.sisters[0],
+    services: ["Brand Identity", "Packaging"],
+    year: "2022",
+    info: ["Brand identity for Sisters, a brand sewing Islamic headscarves: logo, fonts, colours, pattern, tags and packaging."],
+    link: be("153905643/Sisters-Brand-Sewing-Islamic-Headscarves"),
+    blocks: deck("sisters", "Sisters brand identity", 1, 1),
+  },
+  {
+    slug: "faridas-halawiyat",
+    title: "Farida’s Halawiyat",
+    tags: ["Brand Identity"],
+    image: behance["faridas-halawiyat"][0],
+    services: ["Brand Identity"],
+    year: "2022",
+    info: ["Brand identity for Farida’s Halawiyat, a bakery shop."],
+    link: be("146785449/Faridas-Halawiyat-Bakery-Shop-Brand-Identity"),
+    blocks: deck("faridas-halawiyat", "Farida’s Halawiyat brand identity", 1, 1),
+  },
+  {
+    slug: "scary-cupcake",
+    title: "Scary Cupcake",
+    tags: ["Brand Identity", "Illustration"],
+    image: behance["scary-cupcake"][0],
+    services: ["Logo Design", "Illustration"],
+    year: "2022",
+    info: ["Brand identity for Scary Cupcake, a bakery shop."],
+    link: be("143805433/Scary-Cupcake-Bakery-Shop"),
+    blocks: deck("scary-cupcake", "Scary Cupcake brand identity", 2, 1),
+  },
+  {
+    slug: "animal-logos",
+    title: "Animal Shapes Logos",
+    tags: ["Logo Design"],
+    image: behance["animal-logos"][0],
+    services: ["Logo Design"],
+    year: "2022",
+    info: ["A set of logo concepts built from animal shapes."],
+    link: be("147436869/Animal-shapes-logo-concepts"),
+    blocks: deck("animal-logos", "Animal shapes logo concepts", 1, 1),
   },
 ];
 
