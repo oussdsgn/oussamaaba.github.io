@@ -85,15 +85,6 @@ import w_print_alaksa_tartilla from "@/assets/images/work/print-alaksa-tartilla.
 import w_print_netto_banner from "@/assets/images/work/print-netto-banner.jpg";
 import w_print_netto_magic from "@/assets/images/work/print-netto-magic.jpg";
 import w_print_netto_star from "@/assets/images/work/print-netto-star.jpg";
-import product1 from "@/assets/images/store/product-1.jpg";
-import product2 from "@/assets/images/store/product-2.jpg";
-import product3 from "@/assets/images/store/product-3.jpg";
-import product4 from "@/assets/images/store/product-4.jpg";
-import product5 from "@/assets/images/store/product-5.jpg";
-import product6 from "@/assets/images/store/product-6.jpg";
-import product7 from "@/assets/images/store/product-7.jpg";
-import product8 from "@/assets/images/store/product-8.jpg";
-import product9 from "@/assets/images/store/product-9.jpg";
 import boxLtFront from "@/assets/images/work/box-latrasse-front.jpg";
 import boxLtSide from "@/assets/images/work/box-latrasse-side.jpg";
 import boxDyFront from "@/assets/images/work/box-doubby-y-front.jpg";
@@ -192,7 +183,7 @@ export const site = {
   ],
   /** Where to buy work, shown as cards on the Assets Store page */
   stores: [
-    { id: "gumroad", name: "Gumroad", handle: "oussdsgn.gumroad.com", note: "Brush kits for Procreate, Photoshop & Affinity", cta: "Shop the store", href: "https://oussdsgn.gumroad.com" },
+    { id: "gumroad", name: "Gumroad", handle: "oussdsgn.gumroad.com", note: "Digital assets & resources", cta: "Shop the store", href: "https://oussdsgn.gumroad.com" },
     { id: "magnific", name: "Magnific", handle: "magnific.com/author/suoliemane123", note: "Stock assets", cta: "Browse assets", href: "https://www.magnific.com/author/suoliemane123" },
     { id: "deviantart", name: "DeviantArt", handle: "deviantart.com/oussdesigns", note: "Artworks & illustration", cta: "See artworks", href: "https://www.deviantart.com/oussdesigns" },
   ] as { id: "gumroad" | "magnific" | "deviantart"; name: string; handle: string; note: string; cta: string; href: string }[],
@@ -836,7 +827,7 @@ export const experience = [
     points: [
       "Reached Level 3 contributor on Freepik with 2.7K+ published assets and 46.4K+ downloads.",
       "Published 500+ assets on Adobe Stock.",
-      "Now selling brush kits for Procreate, Photoshop and Affinity directly on Gumroad.",
+      "Now selling digital assets directly on Gumroad.",
     ],
   },
   {
@@ -991,15 +982,8 @@ export const webProjects = [
   { name: "AMS Groupe", note: "Group website & subsidiaries", url: "https://amsgroupes.com", desktop: amsDesktop, mobile: amsMobile, background: "linear-gradient(140deg, #2a63c4, #0a2a66)" },
 ] as { name: string; note: string; url?: string; desktop: StaticImageData; mobile?: StaticImageData; background: string }[];
 
-/** Products on Gumroad (prices in USD — update when they change) */
-export const products = [
-  { name: "REDLINE 26 — Procreate & Photoshop Brush Kit", href: "https://oussdsgn.gumroad.com/l/26essentialbrushes", price: 13, image: product1 },
-  { name: "INKWELL 12 — Ink & Comic Brush Kit", href: "https://oussdsgn.gumroad.com/l/otnjsc", price: 13, image: product2 },
-  { name: "Chalk Brush Pack — 43 Brushes for Procreate, Photoshop & Clip Studio", href: "https://oussdsgn.gumroad.com/l/hevkh", price: 12, image: product3 },
-  { name: "Scribbles for Lettering — 21 Photoshop Brushes", href: "https://oussdsgn.gumroad.com/l/kwkwmq", price: 10, image: product4 },
-  { name: "50 Stroke & Splatter Brushes Collection", href: "https://oussdsgn.gumroad.com/l/stroke-splatter-brushes-collection", price: 15, image: product5 },
-  { name: "Affinity Artistic Brushes Vol. 1", href: "https://oussdsgn.gumroad.com/l/affinity-artistic-brushes-vol-1", price: 13, image: product6 },
-  { name: "30 Cloud Effect Photoshop Brushes", href: "https://oussdsgn.gumroad.com/l/cloud-effect-photoshop-brushes", price: 13, image: product7 },
-  { name: "Blood Brushes for Photoshop", href: "https://oussdsgn.gumroad.com/l/blood-brushes-photoshop", price: 13, image: product8 },
-  { name: "Glitter Luxe — Glitter Texture Multi-App Brushes", href: "https://oussdsgn.gumroad.com/l/glitter-luxe-brushes", price: 25, image: product9 },
-];
+/**
+ * Products shown under the store cards on the Assets Store page (hidden while empty).
+ * Add items like: { name: "…", href: "https://oussdsgn.gumroad.com/l/…", price: 12, image: someImport }
+ */
+export const products: { name: string; href: string; price: number; image: StaticImageData }[] = [];

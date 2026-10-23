@@ -18,7 +18,7 @@ export default function AssetsStorePage() {
             <h1 className="page-title"><span className="line"><span>Assets Store</span></span></h1>
           </div>
           <Reveal as="p" className="store__intro">
-            Alongside client work, I make tools for other creatives — texture, ink, chalk and effect brush kits for Procreate, Photoshop, Affinity and Clip Studio. Available on my Gumroad store — with more on Magnific and DeviantArt.
+            Alongside client work, I create digital assets and artwork for other creatives — available on Gumroad, Magnific and DeviantArt.
           </Reveal>
           <div className="store__cards">
             {site.stores.map((st, i) => (
@@ -33,7 +33,7 @@ export default function AssetsStorePage() {
               </Reveal>
             ))}
           </div>
-          <div className="products">
+          {products.length > 0 && <div className="products">
             {products.map((pr, i) => (
               <Reveal key={pr.href} delay={(i % 3) * 80}>
                 <a className="product" href={pr.href} target="_blank" rel="noopener noreferrer" data-cursor="Buy">
@@ -45,7 +45,7 @@ export default function AssetsStorePage() {
                 </a>
               </Reveal>
             ))}
-          </div>
+          </div>}
           <div className="journal">
             <SectionLabel index="01" title="Journal" />
             <p className="journal__note">Design work from other studios that caught my eye.</p>
