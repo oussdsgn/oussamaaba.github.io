@@ -189,16 +189,13 @@ export const site = {
     { label: "Behance", href: "https://behance.net/oussamaaba" },
     { label: "LinkedIn", href: "https://linkedin.com/in/oussama-aba-tlm" },
     { label: "Instagram", href: "https://instagram.com/oussdesigns/" },
-    { label: "Gumroad", href: "https://oussdsgn.gumroad.com" },
-    { label: "Magnific", href: "https://www.magnific.com/author/suoliemane123" },
-    { label: "DeviantArt", href: "https://www.deviantart.com/oussdesigns" },
   ],
-  /** Other places to find and buy work, shown on the Assets Store page */
-  elsewhere: [
-    { name: "Magnific", handle: "magnific.com/author/suoliemane123", note: "Stock assets", href: "https://www.magnific.com/author/suoliemane123" },
-    { name: "DeviantArt", handle: "deviantart.com/oussdesigns", note: "Artworks & illustration", href: "https://www.deviantart.com/oussdesigns" },
-  ],
-  gumroad: { href: "https://oussdsgn.gumroad.com", handle: "oussdsgn.gumroad.com" },
+  /** Where to buy work, shown as cards on the Assets Store page */
+  stores: [
+    { id: "gumroad", name: "Gumroad", handle: "oussdsgn.gumroad.com", note: "Brush kits for Procreate, Photoshop & Affinity", cta: "Shop the store", href: "https://oussdsgn.gumroad.com" },
+    { id: "magnific", name: "Magnific", handle: "magnific.com/author/suoliemane123", note: "Stock assets", cta: "Browse assets", href: "https://www.magnific.com/author/suoliemane123" },
+    { id: "deviantart", name: "DeviantArt", handle: "deviantart.com/oussdesigns", note: "Artworks & illustration", cta: "See artworks", href: "https://www.deviantart.com/oussdesigns" },
+  ] as { id: "gumroad" | "magnific" | "deviantart"; name: string; handle: string; note: string; cta: string; href: string }[],
   images: { hero, portrait },
   marquee: ["Brand Identity", "Social Media", "Packaging", "Print Design", "UI/UX Design", "Motion Graphics"],
 };
@@ -700,6 +697,20 @@ export const projects: Project[] = [
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 
+/**
+ * Categories on the Works page. Each one shows the case studies whose tags match,
+ * then the extra pieces from the matching `archive` group.
+ */
+export const workCategories = [
+  { label: "Brand Identity", tags: ["Brand Identity", "Brand Guidelines", "Rebrand", "Logo Design"], archive: "Logofolio" },
+  { label: "Packaging", tags: ["Packaging"], archive: "Packaging" },
+  { label: "Social Media", tags: ["Social Media", "Campaign"], archive: "Social Media" },
+  { label: "Print", tags: ["Print"], archive: "Print & Medals" },
+  { label: "UI/UX & Web", tags: ["UI/UX", "Web"], archive: "UI/UX & Web" },
+  { label: "Illustration & Posters", tags: ["Illustration"], archive: "Posters & Apparel" },
+  { label: "Web Banners", tags: ["Web Banners"], archive: "Web Banners" },
+];
+
 export const services = [
   {
     title: "Brand Identity",
@@ -932,13 +943,13 @@ export const archive: ArchiveGroup[] = [
     { kind: "billboard", image: w_print_netto_banner, alt: "Netto Star & Magic billboard", bg: "linear-gradient(180deg, #8fc6ef, #d8eefb 70%, #c9d8c2 70%)" },
     { kind: "billboard", image: w_print_alaksa_halwa, alt: "Al Aksa Halwa Turc billboard", bg: "linear-gradient(180deg, #f6b779, #fbe3c4 70%, #d7c7a8 70%)" },
     { kind: "billboard", image: w_print_alaksa_tartilla, alt: "Al Aksa Tartilla billboard", bg: "linear-gradient(180deg, #6f87b6, #c3d0ea 70%, #b9b5a3 70%)" },
-    { kind: "product", image: cutMedal1, alt: "COS 2024 race medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
-    { kind: "product", image: cutMedal2, alt: "CAMA 10 km Kouba medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
-    { kind: "product", image: cutMedal3, alt: "Algiers Urban Trail medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
-    { kind: "product", image: cutMedal4, alt: "Nautical 2024 medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
-    { kind: "product", image: cutMedal5, alt: "Trail Azro N’Thor winner medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
-    { kind: "product", image: cutMedal6, alt: "Kids Trail finisher medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
-    { kind: "product", image: cutMedal7, alt: "ASBAC semi-marathon medal", bg: "radial-gradient(90% 80% at 50% 30%, #fafafa, #dcdcdc)" },
+    { kind: "worn", medal: cutMedal1, garment: "singlet", color: "#e2262c", trim: "#fff", ribbon: ["#e2262c", "#f7c600", "#e2262c"], bg: "linear-gradient(160deg, #f6efe4, #e3d6c2)", alt: "COS 2024 race medal" },
+    { kind: "worn", medal: cutMedal2, garment: "tee", color: "#f4f4f2", trim: "#1d9ad6", ribbon: ["#1d9ad6", "#ffffff", "#1d9ad6"], bg: "linear-gradient(160deg, #cfe9f8, #8fc6e8)", alt: "CAMA 10 km Kouba medal" },
+    { kind: "worn", medal: cutMedal3, garment: "tee", color: "#1b1b1d", trim: "#000", ribbon: ["#006233", "#ffffff", "#d21034", "#ffffff", "#006233"], bg: "linear-gradient(160deg, #e7b48f, #b8643a)", alt: "Algiers Urban Trail medal" },
+    { kind: "worn", medal: cutMedal4, garment: "stripes", color: "#1f2f5c", trim: "#f3f1ea", ribbon: ["#1f2f5c", "#ffffff", "#1f2f5c"], bg: "linear-gradient(160deg, #bfe3ef, #5ea6c4)", alt: "Nautical 2024 medal" },
+    { kind: "worn", medal: cutMedal5, garment: "jacket", color: "#f07a1a", trim: "#2a2a2a", ribbon: ["#2a2a2a", "#f07a1a", "#2a2a2a"], bg: "linear-gradient(160deg, #cfd3d6, #7d858c)", alt: "Trail Azro N’Thor winner medal" },
+    { kind: "worn", medal: cutMedal6, garment: "kid", color: "#4fae4a", trim: "#2c6e2a", ribbon: ["#1aa3d9", "#7bc043", "#1aa3d9"], bg: "linear-gradient(160deg, #e5f6ff, #a9dcf5)", alt: "Kids Trail finisher medal" },
+    { kind: "worn", medal: cutMedal7, garment: "polo", color: "#f2c230", trim: "#1b1b1b", ribbon: ["#008751", "#fcd116", "#e8112d", "#000000"], bg: "linear-gradient(160deg, #f8e7c6, #e2b36a)", alt: "ASBAC semi-marathon medal" },
   ] },
   { title: "Posters & Apparel", kind: "posters", items: [
     { image: w_poster_car_01, alt: "Car-culture graphic" },
@@ -978,13 +989,6 @@ export const webProjects = [
   { name: "Karin Bastin", note: "Consulting website", url: "https://karinbastin.com", desktop: kbDesktop, mobile: kbMobile, background: "linear-gradient(140deg, #24314a, #0c1220)" },
   { name: "AMS Groupe", note: "Group website & subsidiaries", url: "https://amsgroupes.com", desktop: amsDesktop, mobile: amsMobile, background: "linear-gradient(140deg, #2a63c4, #0a2a66)" },
 ] as { name: string; note: string; url?: string; desktop: StaticImageData; mobile?: StaticImageData; background: string }[];
-
-/** Former stock profiles (both accounts are closed — kept as track record, not links) */
-export const stockHistory = [
-  { name: "Freepik", facts: ["Level 3 contributor", "2.7K+ assets", "46.4K+ downloads"] },
-  { name: "Adobe Stock", facts: ["500+ assets", "200+ downloads"] },
-];
-
 
 /** Products on Gumroad (prices in USD — update when they change) */
 export const products = [

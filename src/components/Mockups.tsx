@@ -1,6 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 import type { CSSProperties } from "react";
 import { Phone } from "./DeviceMockup";
+import { MedalWorn, type Worn } from "./MedalWorn";
 
 export type Mock =
   | { kind: "box"; front: StaticImageData; side: StaticImageData; top: string; alt: string; bg?: string }
@@ -9,10 +10,11 @@ export type Mock =
   | { kind: "rollups"; images: StaticImageData[]; alt: string; bg?: string }
   | { kind: "billboard"; image: StaticImageData; alt: string; bg?: string }
   | { kind: "browser"; image: StaticImageData; alt: string; layout: "hero" | "leaderboard"; bg?: string }
-  | { kind: "phones"; images: StaticImageData[]; alt: string; bg?: string };
+  | { kind: "phones"; images: StaticImageData[]; alt: string; bg?: string }
+  | ({ kind: "worn" } & Worn);
 
 /** The full-size image a mockup opens in the lightbox. */
-export const mockImage = (m: Mock) => ("image" in m ? m.image : "images" in m ? m.images[0] : m.front);
+export const mockImage = (m: Mock) => (m.kind === "worn" ? m.medal : "image" in m ? m.image : "images" in m ? m.images[0] : m.front);
 
 const scene = (bg?: string) => (bg ? ({ "--scene-bg": bg } as CSSProperties) : undefined);
 
@@ -78,6 +80,12 @@ export function MockScene({ mock }: { mock: Mock }) {
               <div className="browser__content" aria-hidden="true"><span /><span /><span /><span /></div>
             </div>
           </div>
+        </div>
+      );
+    case "worn":
+      return (
+        <div className="mock mock--worn">
+          <MedalWorn w={mock} id={mock.alt.replace(/[^a-z0-9]/gi, "").slice(0, 16)} />
         </div>
       );
     case "phones":

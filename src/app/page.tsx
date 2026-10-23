@@ -41,7 +41,7 @@ export default function Home() {
       <section className="works">
         <div className="container">
           <SectionLabel index="03" title="Selected Works" />
-          <WorkGallery items={projects.slice(0, 6)} layout="scatter" />
+          <WorkGallery items={projects.slice(0, 6)} />
           <div className="works__more"><Link className="btn" href="/projects">All works <Arrow /></Link></div>
         </div>
       </section>

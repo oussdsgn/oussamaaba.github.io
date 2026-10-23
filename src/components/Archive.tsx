@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useState, type CSSProperties } from "react";
-import { archive, webProjects, type ArchiveGroup } from "@/data/site";
+import { webProjects, type ArchiveGroup } from "@/data/site";
 import { DeviceScene } from "./DeviceMockup";
 import { MockScene, mockImage } from "./Mockups";
 import { Lightbox } from "./Lightbox";
@@ -27,11 +27,9 @@ export function PieceFrame({ kind, piece, onOpen, i }: { kind: ArchiveGroup["kin
   );
 }
 
-/** Tabbed "More work" archive: one discipline at a time, every piece opens full-size. */
-export function Archive() {
-  const [tab, setTab] = useState(0);
+/** The extra pieces of one discipline, laid out in its own presentation; every piece opens full-size. */
+export function ArchivePieces({ group }: { group: ArchiveGroup }) {
   const [open, setOpen] = useState<number | null>(null);
-  const group = archive[tab];
   const isWeb = group.kind === "web";
   const items = isWeb
     ? webProjects.map((w) => ({ image: w.desktop, title: w.name, caption: w.note }))
@@ -41,50 +39,35 @@ export function Archive() {
   const nav = useCallback((dir: 1 | -1) => setOpen((i) => (i === null ? i : (i + dir + items.length) % items.length)), [items.length]);
 
   return (
-    <section className="archive" aria-labelledby="archive-title">
-      <div className="container">
-        <div className="archive__head">
-          <h2 id="archive-title" className="archive__title">More work</h2>
-          <p className="archive__note">A wider look across disciplines — click any piece to see it full-size.</p>
-        </div>
-        <div className="archive__tabs" role="tablist" aria-label="Disciplines">
-          {archive.map((g, i) => (
-            <button key={g.title} role="tab" aria-selected={tab === i} className="archive__tab" onClick={() => { setTab(i); setOpen(null); }}>
-              <span className="archive__tab-num">{String(i + 1).padStart(2, "0")}</span>
-              {g.title}
-            </button>
-          ))}
-        </div>
-
-        <div className={`archive__grid archive__grid--${group.kind}`} role="tabpanel" key={tab}>
-          {isWeb
-            ? webProjects.map((w, i) => (
-                <Reveal key={w.name} delay={(i % 2) * 90} className="web-card">
-                  <button className="web-card__hit" data-cursor="Zoom" onClick={() => setOpen(i)} aria-label={`Enlarge: ${w.name} website`}>
-                    <DeviceScene desktop={w.desktop} mobile={w.mobile} name={w.name} background={w.background} />
-                  </button>
-                  <div className="web-card__meta">
-                    <div>
-                      <h3 className="web-card__name">{w.name}</h3>
-                      <p className="web-card__note">{w.note}</p>
-                    </div>
-                    {w.url && <a className="cs-link" href={w.url} target="_blank" rel="noopener noreferrer">Visit site <span aria-hidden="true">↗</span></a>}
+    <>
+      <div className={`archive__grid archive__grid--${group.kind}`}>
+        {isWeb
+          ? webProjects.map((w, i) => (
+              <Reveal key={w.name} delay={(i % 2) * 90} className="web-card">
+                <button className="web-card__hit" data-cursor="Zoom" onClick={() => setOpen(i)} aria-label={`Enlarge: ${w.name} website`}>
+                  <DeviceScene desktop={w.desktop} mobile={w.mobile} name={w.name} background={w.background} />
+                </button>
+                <div className="web-card__meta">
+                  <div>
+                    <h3 className="web-card__name">{w.name}</h3>
+                    <p className="web-card__note">{w.note}</p>
                   </div>
+                  {w.url && <a className="cs-link" href={w.url} target="_blank" rel="noopener noreferrer">Visit site <span aria-hidden="true">↗</span></a>}
+                </div>
+              </Reveal>
+            ))
+          : group.mocks
+            ? group.mocks.map((m, i) => (
+                <Reveal key={m.alt} delay={(i % 2) * 90}>
+                  <button className="mock__hit" data-cursor="Zoom" onClick={() => setOpen(i)} aria-label={`Enlarge: ${m.alt}`}>
+                    <MockScene mock={m} />
+                  </button>
+                  <p className="mock__caption">{m.alt}</p>
                 </Reveal>
               ))
-            : group.mocks
-              ? group.mocks.map((m, i) => (
-                  <Reveal key={m.alt} delay={(i % 2) * 90}>
-                    <button className="mock__hit" data-cursor="Zoom" onClick={() => setOpen(i)} aria-label={`Enlarge: ${m.alt}`}>
-                      <MockScene mock={m} />
-                    </button>
-                    <p className="mock__caption">{m.alt}</p>
-                  </Reveal>
-                ))
-              : group.items.map((p, i) => <PieceFrame key={p.alt + i} kind={group.kind} piece={p} i={i} onOpen={() => setOpen(i)} />)}
-        </div>
+            : group.items.map((p, i) => <PieceFrame key={p.alt + i} kind={group.kind} piece={p} i={i} onOpen={() => setOpen(i)} />)}
       </div>
       <Lightbox items={items} index={open} onClose={() => setOpen(null)} onNav={nav} />
-    </section>
+    </>
   );
 }

@@ -4,7 +4,8 @@ import { Reveal } from "@/components/Reveal";
 import { SectionLabel } from "@/components/SectionLabel";
 import { Cta } from "@/components/Cta";
 import Image from "next/image";
-import { articles, products, site, stockHistory } from "@/data/site";
+import { articles, products, site } from "@/data/site";
+import { StoreLogo } from "@/components/StoreLogo";
 
 export const metadata: Metadata = { title: "Assets Store" };
 
@@ -20,34 +21,14 @@ export default function AssetsStorePage() {
             Alongside client work, I make tools for other creatives — texture, ink, chalk and effect brush kits for Procreate, Photoshop, Affinity and Clip Studio. Available on my Gumroad store — with more on Magnific and DeviantArt.
           </Reveal>
           <div className="store__cards">
-            <Reveal>
-              <a className="store-card store-card--primary" href={site.gumroad.href} target="_blank" rel="noopener noreferrer" data-cursor="Shop">
-                <span className="store-card__name">Gumroad <span aria-hidden="true">↗</span></span>
-                <span className="store-card__handle">{site.gumroad.handle}</span>
-                <span className="store-card__cta">Shop the store</span>
-              </a>
-            </Reveal>
-            <Reveal delay={100}>
-              <div className="store-card store-card--muted">
-                <span className="store-card__label">Track record</span>
-                {stockHistory.map((s) => (
-                  <div key={s.name} className="store-card__row">
-                    <span className="store-card__row-name">{s.name}</span>
-                    <span className="store-card__facts">{s.facts.map((f) => <span key={f}>{f}</span>)}</span>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-          <div className="store__elsewhere">
-            {site.elsewhere.map((e, i) => (
-              <Reveal key={e.name} delay={i * 80}>
-                <a className="store-link" href={e.href} target="_blank" rel="noopener noreferrer" data-cursor="Visit">
-                  <span>
-                    <span className="store-link__name">{e.name}</span>
-                    <span className="store-link__handle">{e.handle}</span>
-                  </span>
-                  <span className="store-link__note">{e.note} <span aria-hidden="true">↗</span></span>
+            {site.stores.map((st, i) => (
+              <Reveal key={st.id} delay={i * 90}>
+                <a className={`store-card store-card--${st.id}`} href={st.href} target="_blank" rel="noopener noreferrer" data-cursor="Visit">
+                  <StoreLogo id={st.id} className="store-card__logo" />
+                  <span className="store-card__name">{st.name} <span aria-hidden="true">↗</span></span>
+                  <span className="store-card__handle">{st.handle}</span>
+                  <span className="store-card__note">{st.note}</span>
+                  <span className="store-card__cta">{st.cta}</span>
                 </a>
               </Reveal>
             ))}
