@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
+export function Counter({ value, suffix = "", decimals = 0 }: { value: number; suffix?: string; decimals?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
   const [n, setN] = useState(0);
 
@@ -21,7 +21,7 @@ export function Counter({ value, suffix = "" }: { value: number; suffix?: string
         const t0 = performance.now();
         const step = (t: number) => {
           const p = Math.min(1, (t - t0) / 1600);
-          setN(Math.round(value * (1 - Math.pow(1 - p, 3))));
+          setN(value * (1 - Math.pow(1 - p, 3)));
           if (p < 1) raf = requestAnimationFrame(step);
         };
         raf = requestAnimationFrame(step);
@@ -37,7 +37,7 @@ export function Counter({ value, suffix = "" }: { value: number; suffix?: string
 
   return (
     <span ref={ref} className="stat__num" aria-label={`${value}${suffix}`}>
-      {n}
+      {n.toFixed(decimals)}
       {suffix}
     </span>
   );

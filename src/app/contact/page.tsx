@@ -18,6 +18,10 @@ export default function ContactPage() {
               <a className="contact__value contact__mail" href={`mailto:${site.email}`}>{site.email}</a>
             </div>
             <div>
+              <p className="contact__key">Phone / WhatsApp</p>
+              <a className="contact__value contact__mail" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
+            </div>
+            <div>
               <p className="contact__key">Based in</p>
               <p className="contact__value">{site.city} — <Clock showCity={false} /> local time</p>
             </div>

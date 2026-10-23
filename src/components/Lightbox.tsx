@@ -34,7 +34,7 @@ export function Lightbox({ items, index, onClose, onNav }: Props) {
       {item && (
         <div className="lightbox__inner" key={index}>
           <div className="lightbox__media">
-            <Image src={item.image} alt={item.title} placeholder="blur" sizes="(max-width: 760px) 100vw, 80vw" />
+            <Image src={item.image} alt={item.caption ?? item.title} placeholder="blur" sizes="(max-width: 760px) 100vw, 80vw" quality={90} />
           </div>
           <div className="lightbox__bar">
             <div>

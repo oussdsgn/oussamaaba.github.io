@@ -57,6 +57,11 @@ export default async function ProjectPage({ params }: Params) {
                   <p className="cs-list">{project.year}</p>
                 </div>
               )}
+              {project.link && (
+                <a className="cs-link" href={project.link.href} target="_blank" rel="noopener noreferrer">
+                  {project.link.label} <span aria-hidden="true">↗</span>
+                </a>
+              )}
             </Reveal>
             {project.info && (
               <Reveal className="cs-info" delay={80}>

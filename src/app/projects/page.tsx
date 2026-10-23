@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { WorkGallery } from "@/components/WorkGallery";
 import { Cta } from "@/components/Cta";
+import { Archive } from "@/components/Archive";
 import { projects } from "@/data/site";
 
 export const metadata: Metadata = { title: "Projects" };
@@ -17,6 +18,7 @@ export default function ProjectsPage() {
           <WorkGallery items={projects} layout="grid" filters />
         </div>
       </div>
+      <Archive />
       <Cta />
     </>
   );

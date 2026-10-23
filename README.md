@@ -20,6 +20,10 @@ All text, links, projects, articles, stats and testimonials are in **`src/data/s
 - **Contact email:** `site.email` in `site.ts`. The form opens the visitor's mail app with the message already written.
 - **Testimonials:** add entries to the `testimonials` array; the slider arrows appear automatically.
 - **Projects:** add an entry to `projects`. Its tags feed the filter buttons on /projects.
+- **Case studies:** each project's `blocks` mix text sections and image rows (1–4 columns); `link` adds a Behance button.
+- **About:** `about`, `experience` and `education` in `site.ts`; the client wall uses the logos in `src/assets/images/clients/`.
+- **More work archive:** the `archive` list in `site.ts` (boards are slides from the portfolio PDF, in `src/assets/images/archive/`).
+- **Assets Store:** the `stock` profiles and `stockFeatured` boards in `site.ts`.
 - **Logo:** `src/components/Logo.tsx` (inline SVG) and `src/app/icon.svg` (favicon).
 - **Colors and fonts:** CSS variables at the top of `src/app/globals.css`. The red accent is `--accent`.
 

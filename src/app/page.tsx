@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Marquee items={["Brand Design", "Web Design", "Graphic Design", "Art Direction", "Brand Identity"]} />
+      <Marquee items={site.marquee} />
 
       <section className="intro">
         <div className="container">

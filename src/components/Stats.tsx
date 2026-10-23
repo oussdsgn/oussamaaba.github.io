@@ -4,10 +4,10 @@ import { Reveal } from "./Reveal";
 
 export function Stats({ items }: { items: Stat[] }) {
   return (
-    <div className="stats__grid">
+    <div className="stats__grid" style={{ "--cols": items.length } as React.CSSProperties}>
       {items.map((s, i) => (
         <Reveal key={s.label} className="stat" delay={i * 100}>
-          <Counter value={s.value} suffix={s.suffix} />
+          <Counter value={s.value} suffix={s.suffix} decimals={s.decimals} />
           <p className="stat__label">{s.label}</p>
           <p className="stat__text">{s.text}</p>
         </Reveal>
