@@ -1,5 +1,7 @@
 # oussdsgn — portfolio (Next.js)
 
+Live at **https://oussdsgn.vercel.app**
+
 Built with Next.js 16 (App Router), React 19 and TypeScript. Smooth scrolling uses [Lenis](https://github.com/darkroomengineering/lenis); there are no other runtime dependencies.
 
 ## Getting started
