@@ -31,12 +31,6 @@ import w_logo_12 from "@/assets/images/work/logo-12.png";
 import w_logo_13 from "@/assets/images/work/logo-13.png";
 import w_logo_14 from "@/assets/images/work/logo-14.png";
 import w_logo_15 from "@/assets/images/work/logo-15.png";
-import w_logo_16 from "@/assets/images/work/logo-16.png";
-import w_logo_17 from "@/assets/images/work/logo-17.png";
-import w_logo_18 from "@/assets/images/work/logo-18.png";
-import w_logo_19 from "@/assets/images/work/logo-19.png";
-import w_logo_20 from "@/assets/images/work/logo-20.png";
-import w_logo_21 from "@/assets/images/work/logo-21.png";
 import w_medal_1 from "@/assets/images/work/medal-1.jpg";
 import w_medal_2 from "@/assets/images/work/medal-2.jpg";
 import w_medal_3 from "@/assets/images/work/medal-3.jpg";
@@ -892,12 +886,6 @@ export const archive: ArchiveGroup[] = [
     { image: w_logo_13, alt: "Crust & Cup logo", bg: "#eeeeee" },
     { image: w_logo_14, alt: "Green Soup logo", bg: "#eeeeee" },
     { image: w_logo_15, alt: "Centella logo", bg: "#eeeeee" },
-    { image: w_logo_16, alt: "Crest monogram logo", bg: "#0d1015" },
-    { image: w_logo_17, alt: "Meow logo", bg: "#0d1015" },
-    { image: w_logo_18, alt: "FJ crest logo", bg: "#0d1015" },
-    { image: w_logo_19, alt: "Design Pro logo", bg: "#0d1015" },
-    { image: w_logo_20, alt: "Shield monogram logo", bg: "#0d1015" },
-    { image: w_logo_21, alt: "S monogram logo", bg: "#0d1015" },
   ] },
   { title: "Social Media", kind: "posts", items: [
     { image: w_post_01, alt: "AMS Agency end-of-year gifts post" },
