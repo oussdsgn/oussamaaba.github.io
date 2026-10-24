@@ -95,7 +95,8 @@ ul, ol { list-style: none; padding: 0; }
 .reveal--scale.is-in .work__meta { transform: none; opacity: 1; }
 
 /* Lines that slide up out of a mask */
-.line { display: block; overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+/* side padding keeps tightly-tracked last letters from being clipped */
+.line { display: block; overflow: hidden; padding: 0 0.12em 0.08em 0; margin: 0 -0.12em -0.08em 0; }
 .line > span { display: block; transform: translateY(110%); animation: line-up 1.2s var(--ease) forwards; }
 .line:nth-child(2) > span { animation-delay: 0.08s; }
 .line:nth-child(3) > span { animation-delay: 0.16s; }
